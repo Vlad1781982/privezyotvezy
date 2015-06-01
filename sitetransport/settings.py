@@ -12,8 +12,22 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+from datetime import timedelta
+import pytz
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_PATH = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
+MEDIA_URL='/files/media/'
+
+STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
+STATIC_URL = '/files/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,13 +45,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'privezyotvezy',
+    'mainpage',
+    'ckeditor',
+    'pymorphy',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,8 +98,12 @@ WSGI_APPLICATION = 'sitetransport.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'privezyotvezy',
+        'USER':'root',
+        'PASSWORD':'Stereolab82',
+        'HOST': '', # Set to empty string for localhost.
+        'PORT': '',
     }
 }
 
@@ -86,22 +111,29 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+SITE_ID=1
+
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
+
+DATE_FORMAT = 'd E Y'
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
+CKEDITOR_UPLOAD_PATH ='uploads/'
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {     'default': {         'forcePasteAsPlainText': True     } }
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_URL = '/static/'
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-)
