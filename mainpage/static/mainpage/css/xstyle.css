@@ -1,0 +1,25 @@
+.docs-wrapper .bx-wrapper .bx-viewport {
+    height: 130px !important;
+}
+ul.docslider li {
+    text-align: center;
+}
+
+h1.boxx {
+    margin: 1.6em 0px 0.5em;
+    font-size: 24px;
+}
+
+div.main-column h1 {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: normal;
+    background: none;
+    color: black;
+    border-radius: 0;
+    padding: 0;
+}
+
+        ul.slider li.item06 {
+            background-image: url(../images/bg_slider_ico6.png);
+        }

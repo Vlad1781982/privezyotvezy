@@ -59,6 +59,9 @@ INSTALLED_APPS = (
     'mainpage',
     'ckeditor',
     'pymorphy',
+    'cars',
+    'callback',
+    'news',
 )
 
 MIDDLEWARE_CLASSES = (
