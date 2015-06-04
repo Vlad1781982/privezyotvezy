@@ -1,3 +1,7 @@
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+
 """sitetransport URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,5 +22,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^$', 'mainpage.views.index'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns()

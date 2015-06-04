@@ -1,0 +1,115 @@
+/* TipTip CSS - Version 1.2 */
+
+.tip {
+	display: none;
+}
+
+#tiptip_holder {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+/*	overflow: hidden; */
+}
+
+#tiptip_holder.tip_top {
+	padding-bottom: 10px;
+}
+
+#tiptip_holder.tip_bottom {
+	padding-top: 10px;
+}
+
+#tiptip_holder.tip_right {
+	padding-left: 10px;
+}
+
+#tiptip_holder.tip_left {
+	padding-right: 10px;
+}
+
+#tiptip_content {
+	font-size: 13px;
+	color: #333;
+	line-height: 1.2em;
+	padding: 10px 12px;
+	border: 1px solid #F1BA14;
+	background: #fffef8;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.2);	
+}
+
+#tiptip_arrow, #tiptip_arrow_inner {
+	position: absolute;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 10px;
+	height: 0;
+	width: 0;
+}
+
+
+#tiptip_holder.tip_top #tiptip_arrow {
+	border-top-color: #F1BA14;
+	margin-bottom: -20px !important;	
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow {
+	border-bottom-color: #F1BA14;
+	margin-top: -20px !important;
+}
+
+#tiptip_holder.tip_right #tiptip_arrow {
+	border-right-color: #F1BA14;	
+	margin-left: -20px !important;
+}
+
+#tiptip_holder.tip_left #tiptip_arrow {
+	border-left-color: #F1BA14;
+	margin-right: -20px !important;
+}
+
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+	margin-top: -11px;
+	margin-left: -10px;	
+	border-top-color: #fffef8;	
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+	margin-top: -9px;
+	margin-left: -10px;
+	border-bottom-color: #fffef8;
+	
+	
+}
+
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+	margin-top: -10px;
+	margin-left: -9px;
+	border-right-color: #fffef8;
+	
+}
+
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+	margin-top: -10px;
+	margin-left: -11px;
+	border-left-color: #fffef8;	
+	
+}
+
+/* Webkit Hacks  */
+@media screen and (-webkit-min-device-pixel-ratio:0) {	
+	#tiptip_content {
+		padding: 4px 8px 5px 8px;
+		background-color: #fffef8;
+	}
+	#tiptip_holder.tip_bottom #tiptip_arrow_inner { 
+		border-bottom-color: #fffef8;
+	}
+	#tiptip_holder.tip_top #tiptip_arrow_inner { 
+		border-top-color: #fffef8;
+	}
+}

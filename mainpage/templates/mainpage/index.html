@@ -8,19 +8,21 @@
 <meta name="keywords" content="грузовые перевозки по москве, транспортные услуги, грузоперевозки москва, перевозки москва, транспортные перевозки, заказать газель, перевозка грузов москва, доставка грузов москва">
 
 <link rel="shortcut icon" href="http://www.sferatrans.ru/ico.ico">
-
+ <link href="{% static 'mainpage/css/iontabs/css/ion.tabs.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/css/iontabs/css/ion.tabs.skinBordered.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/tipTip.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/xstyle.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/jquery.bxslider.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/jquery.fancybox.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/style.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'mainpage/css/animate.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'mainpage/css/font-awesome-4.3.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
 
 <!-- jquery.qtip plugin -->
+<script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
 <link href="{% static 'mainpage/css/jquery.qtip.min.css' %}" rel="stylesheet">
-
  <script type="text/javascript" async="" src="{% static 'mainpage/script/watch.js' %}"></script>
- <script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
  <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider.js' %}"></script>
  <script type="text/javascript" src="{% static 'mainpage/script/jquery.tipTip.js' %}"></script>
 
@@ -42,11 +44,7 @@ $(function(){
 	  moveSlides: 1,
 	  slideWidth: 180,
 	});
-	cform('callback');
-cform('subscribeform');
-// cform('orderform');
-	
-	
+
 	$('ul.clients').bxSlider({
 	  minSlides: 4,
 	  maxSlides: 4,
@@ -58,63 +56,6 @@ cform('subscribeform');
 	  slideWidth: 220,
 	});
 	
-	$(".fancybox").fancybox();
-	
-	$(".fancytext").fancybox({
-    wrapCSS    : 'fancybox-custom',
-    openEffect : 'none',
-    helpers : {
-        title : {
-            type : 'inside'
-        },
-            overlay : {
-            css : {
-                'background' : 'rgba(0,0,0,0.3)'
-            }
-        }
-    },
-  afterLoad : function( current){
-    if (typeof $(current.element).data('auto_id') != 'undefined') {
-        $('#select_fill').val( $(current.element).data('auto_id') );
-    }
-    if (typeof $(current.element).data('auto_name') != 'undefined') {
-        $('#auto_name').val( $(current.element).data('auto_name') );
-    }
-
-    if (typeof $(current.element).data('auto_title') != 'undefined') {
-        $('#order_title_h3').text( $(current.element).data('auto_title') );
-    }
-
-   }
-			});
-
-		var tabContainersMain = $('.main-column div.tabs > div');
-		tabContainersMain.hide().filter(':first').show();		
-		$('.main-column div.tabs ul.tabs-head a').click(function () {
-			tabContainersMain.hide();
-			tabContainersMain.filter(this.hash).show();
-			$('.main-column div.tabs ul.tabs-head li').removeClass('selected');
-			$(this).parent().addClass('selected');
-			return false;
-		}).filter(':first').click();		
-
-		var tabContainersRight = $('.right-column div.tabs > div');
-		tabContainersRight.hide().filter(':first').show();		
-		$('.right-column div.tabs ul.tabs-head a').click(function () {
-			tabContainersRight.hide();
-			tabContainersRight.filter(this.hash).show();
-			$('.right-column div.tabs ul.tabs-head li').removeClass('selected');
-			$(this).parent().addClass('selected');
-			return false;
-		}).filter(':first').click();		
-
-
-        if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-            $('.hasTip').tipTip({
-                maxWidth: "300px"
-            });
-        }
-
 
                 $("#grinputsbox").click(function() {
                     $("#grtimepicker").hide();
@@ -243,31 +184,24 @@ cform('subscribeform');
                 <h1 class="boxx mainpageboxx">ТЭК «СфераТранс» - недорогие грузоперевозки по Москве и области!</h1>
     <div class="main-column">
     <div class="box">
-      <div class="tabs">
-        <ul class="tabs-head nc">
-                                <li class="hasTip selected">
-                                    <a href="http://www.sferatrans.ru/#cars1">Грузовой автопарк</a>
-                                    <div class="tip">
-                                        Автопарк «СфераТранс» осуществляющий грузовые перевозки автомобильным транспортом по Москве, области и России.
-                                    </div>
-                                </li>
-                                <li class="hasTip">
-                                    <a href="http://www.sferatrans.ru/#cars2"> По грузоподъемности</a>
-                                    <div class="tip">
-                                        Перевозка и доставка грузов по Москве и области от 500 кг. до 20 тонн.
-                                    </div>
-                                </li>
+
+
+      <div class="ionTabs" id="tabs_1" data-name="Tabs_Group_name">
+        <ul class="ionTabs__head">
+                                <li class="ionTabs__tab" data-target="Tab_1_name">Автопарк</li>
+                                <li class="ionTabs__tab" data-target="Tab_2_name">По грузоподъемности</li>
         </ul>
-        <div id="cars1" class="nc" style="display: block;">
+        <div class=ionTabs__body">
+        <div class="ionTabs__item" data-name="Tab_1_name">
                                 <ul class="cars">
 
 
-
+        {% for car in cars %}
          <li>
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="./index_files/do-500-kg-kabluk-968160_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/">Каблук</a><br>
+                  <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="{{car.photo.url}}"/></a></td>
+                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/">{{ car.title }}</a><br>
                       от 2000 руб.</p>
 
        <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Каблук (Fiat, Peugeot) 500кг." data-auto_title="Заказать перевозку на &quot;Каблуке&quot;" data-auto_id="1" class="button fancytext">Заказать</a></p>
@@ -275,358 +209,40 @@ cform('subscribeform');
                 </td></tr>
                 <tr>
                   <td>Грузоподъемность: </td>
-                  <td>500 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>3,4 м куб</td>
+                  <td>{{ car.carrying }} кг</td>
                 </tr>
                 <tr>
                   <td>Мин. заказ: </td>
-                  <td>4 + 1 час</td>
+                  <td>{{ car.minorder }} + 1 час</td>
                 </tr>
                 <tr>
                   <td>Доп. время: </td>
-                  <td>400 руб./час</td>
+                  <td>{{ car.addtime }}</td>
                 </tr>
                 <tr>
                   <td>Выезд за МКАД: </td>
-                  <td>13 руб./км</td>
+                  <td>{{ car.mkad }} руб./км</td>
                 </tr>
               </tbody></table>
 
         <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="1" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
 
             </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/hyundai-porter/" class="zoom"><img src="./index_files/do-1-t-do-10-kub-912659_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/hyundai-porter/">Hyundai Porter</a><br>
-                      от 2300 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Hyundai Porter до 1 тонны и 10 м3" data-auto_title="Заказать перевозку на Хендай Портере" data-auto_id="14" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>1000 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>9,5 м куб</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>3 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>440 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>14 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="14" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/zakazat-gruzovuju-gazel/" class="zoom"><img src="./index_files/do-15-t-do-10-kub-319295_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/zakazat-gruzovuju-gazel/">Грузовая Газель или аналог</a><br>
-                      от 2300 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Газель грузовая (мебельный фургон)" data-auto_title="Заказать перевозку на Газели" data-auto_id="28" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>1500 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>9,5 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>3 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>440 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>14 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="28" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/gazel-bortovaya-udlinennaya/" class="zoom"><img src="./index_files/bort-do-15-t-4-m-118648_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/gazel-bortovaya-udlinennaya/">Газель-борт удл или аналог</a><br>
-                      от 3600 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Газель бортовая удлиненная 4 м." data-auto_title="Заказать перевозку на бортовом 1,5т с базой 4м" data-auto_id="19" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>1500 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>5 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>600 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>15 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="19" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/gruzopassazhirskaya-gazel/" class="zoom"><img src="./index_files/do-15-t-gruzopassazhirskaya-854026_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/gruzopassazhirskaya-gazel/">Грузопассажирская до 5 человек</a><br>
-                      от 3000 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Грузопассажирская Газель 1,3т + 5 пассажиров" data-auto_title="Заказать перевозку на  грузопассажирской Газели" data-auto_id="26" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>1300 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>12 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>5 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>500 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>15 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="26" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/zakazat-udlinennuju-gazel/" class="zoom"><img src="./index_files/do-15-t-do-18-kub-449739_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/zakazat-udlinennuju-gazel/">Удлиненная база до 4 метров</a><br>
-                      от 3300 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Газель удлиненная до 1,5т, база 4м" data-auto_title="Заказать перевозку на удлиненной Газели" data-auto_id="27" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>1500 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>16 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>5 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>550 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>15 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="27" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/iveco-daily-3tonny/" class="zoom"><img src="./index_files/do-3-t-do-21-kub-831864_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/iveco-daily-3tonny/">Бычок с удлиненной базой 4,5м до 3т</a><br>
-                      от 4200 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Iveco Daily гидролифт до 3т. и 4,5м." data-auto_title="Заказать перевозку Iveco Daily 4,5м до 3т. гидролифт" data-auto_id="25" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>3000 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>21 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>6 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>600 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>20 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="25" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/do-5t/" class="zoom"><img src="./index_files/do-5-tonn-do-40-kubov-819054_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/do-5t/">Мицубиси, Ивеко Еврокарго или аналог до 5т</a><br>
-                      от 6400 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Мицубиси, Ивеко Еврокарго или аналог до 5т" data-auto_title="Заказать перевозку на Мицубиси, Ивеко Еврокарго или аналоге до 5т" data-auto_id="21" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>5000 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>27 - 35 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>7 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>800 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>25 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="21" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/iveko-evro-kargo/" class="zoom"><img src="./index_files/do-10-tonn-do-50-kubov-543121_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/iveko-evro-kargo/">Ивеко Еврокарго или аналог 10т</a><br>
-                      от 6800 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Ивеко Еврокарго или аналог 10т" data-auto_title="Заказать перевозку на Ивеко Еврокарго или аналоге" data-auto_id="12" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>10 000 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>50 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>7 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>850 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>25 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="12" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/evrofury/" class="zoom"><img src="./index_files/evrofura-811822_preview.jpg"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/evrofury/">Еврофура до 20т. или аналог </a><br>
-                      от 8000 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Еврофура до 20т. или аналог " data-auto_title="Заказать перевозку на Еврофуре" data-auto_id="13" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>20 000 кг</td>
-                </tr>
-                <tr>
-                  <td>Объем кузова: </td>
-                  <td>82 куб.м</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>7 + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>1000 руб./час</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>35 руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="13" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-
-
-
-
+        {%  endfor %}
                                 </ul>
         </div>
-        <div id="cars2" class="nc" style="display: none;"> 
+
+
+
+        <div class="ionTabs__item" data-name="Tab_2_name">
                                 <ul class="cars types">
+                                    {% for group in groups %}
                                     <li>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tbody><tr>
                                                 <td>
                                                     <a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom">
-                                                        <img src="./index_files/car_type1.jpg">
+                                                        <img src="{{group.photo.url}}">
                                                     </a>
                                                 </td>
                                                 <td>
@@ -637,346 +253,38 @@ cform('subscribeform');
                                                 <td colspan="2">
                                                     <span class="head">
                                                         <a href="http://www.sferatrans.ru/avtopark/kabluk/">
-                                                            Грузоперевозки до 0.5 тонн<br>
+                                                            Грузоперевозки до {{ group.title }} тонн<br>
                                                         </a>
-                                                        от 2000 руб.
+                                                        от {{ group.price }} руб.
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
+                                                <td>{{ group.minorder }} + 1 час</td>
                                             </tr>
                                             <tr>
                                                 <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
+                                                <td>{{ group.addtime }} руб./час</td>
                                             </tr>
                                             <tr>
                                                 <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
+                                                <td>{{ group.mkad }} руб./км</td>
                                             </tr>
                                         </tbody></table>
                                     </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/hyundai-porter/" class="zoom">
-                                                        <img src="./index_files/car_type2.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/hyundai-porter/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/hyundai-porter/">
-                                                            Грузоперевозки до 1 тонны<br>
-                                                        </a>
-                                                        от 2200 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/gazel/" class="zoom">
-                                                        <img src="./index_files/car_type3.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/gazel/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/gazel/">
-                                                            Перевозки до 1.5 тонн<br>
-                                                        </a>
-                                                        от 2200 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/perevozki-3-tonny/" class="zoom">
-                                                        <img src="./index_files/car_type4.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/perevozki-3-tonny/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/perevozki-3-tonny/">
-                                                            Перевозки до 3 тонн<br>
-                                                        </a>
-                                                        от 4200 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/perevozki-5-tonn/" class="zoom">
-                                                        <img src="./index_files/car_type5.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/perevozki-5-tonn/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/perevozki-5-tonn/">
-                                                            Перевозка грузов до 5 тонн<br>
-                                                        </a>
-                                                        от 6400 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/bort/" class="zoom">
-                                                        <img src="./index_files/car_type10.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/bort/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/bort/">
-                                                            Бортовые перевозки до 5 т<br>
-                                                        </a>
-                                                        от 6400 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/perevozki-10-tonn/" class="zoom">
-                                                        <img src="./index_files/car_type6.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/perevozki-10-tonn/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/perevozki-10-tonn/">
-                                                            Грузоперевозки до 10 тонн<br>
-                                                        </a>
-                                                        от 6800 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/perevozki-20-tonn/" class="zoom">
-                                                        <img src="./index_files/car_type7.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/perevozki-20-tonn/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/perevozki-20-tonn/">
-                                                            Грузоперевозки до 20 тонн<br>
-                                                        </a>
-                                                        от 8000 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>4 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>500 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/bort/" class="zoom">
-                                                        <img src="./index_files/car_type9.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/bort/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/bort/">
-                                                            Бортовые грузоперевозки до 20 тонн<br>
-                                                        </a>
-                                                        от 3300 руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>5 + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>550 руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>15 руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/krany/" class="zoom">
-                                                        <img src="./index_files/car_type8.jpg">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/krany/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/krany/">
-                                                            Спецтехника: автокраны, манипуляторы<br>
-                                                        </a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-
+                                    {% endfor %}
                                 </ul>
 
         </div>
-      </div>
+        <div class="ionTabs__preloader"></div>
+        </div>
+
+
+
+
     </div>  
+    </div>
     </div>
     <div class="right-column"> 
                     <a href="http://www.sferatrans.ru/calc/" class="calc hasTip" onclick="yaCounter25323134.reachGoal(&#39;calccol&#39;); return true;">
@@ -1396,21 +704,28 @@ cform('subscribeform');
                 <div class="tt-dropdown-menu" id="dropdown" style="display: none; position: absolute; background-color: white; border: #c9c9c9 1px solid; z-index: 100000;"></div>
 
 
-<script type="text/javascript" src="./index_files/jquery.fancybox.js"></script>
-<script type="text/javascript" src="./index_files/cform.js"></script>
-<script type="text/javascript" src="./index_files/jquery.tipTip.js"></script>
-    <script type="text/javascript" src="./index_files/typeahead.min.js"></script>
-    <script type="text/javascript" src="./index_files/calcmain.js"></script>
-<script type="text/javascript" src="./index_files/scripts.js"></script>
+<script type="text/javascript"  src="{% static 'mainpage/script/jquery.fancybox.js' %}"></script>
+<script type="text/javascript"  src="{% static 'mainpage/script/cform.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/typeahead.min.js' %}"></script>
+<script type="text/javascript" async="" src="{% static 'mainpage/css/iontabs/js/ion-tabs/ion.tabs.js' %}"></script>
+<script type="text/javascript"  src="{% static 'mainpage/script/calcmain.js' %}"></script>
+<script type="text/javascript"  src="{% static 'mainpage/script/scripts.js' %}"></script>
+<script type="text/javascript"  src="{% static 'mainpage/script/jquery.qtip.min.js' %}"></script>
+
 
 <noindex>
 <!--LiveInternet counter--><script type="text/javascript">document.write('<a href="http://www.liveinternet.ru/click" target=_blank><img src="http://counter.yadro.ru/hit?t45.11;r' + escape(document.referrer) + ((typeof(screen)=='undefined')?'':';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ';u' + escape(document.URL) + ';' + Math.random() + '" border=0 width=1 height=1 alt="" title="LiveInternet"></a>')</script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./index_files/hit" border="0" width="1" height="1" alt="" title="LiveInternet"></a><!--/LiveInternet-->
 </noindex>
 
 <!-- jquery qtip plugin -->
-<script src="./index_files/jquery.qtip.min.js" type="text/javascript"></script>
 
 
 <div id="tiptip_holder" style="max-width: 300px; margin: 473px 0px 0px 746px; display: none;" class="tip_bottom"><div id="tiptip_arrow" style="margin-left: 144px; margin-top: -12px;"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content">
                                 Транспортная компания «СфераТранс» - с 1999 года на рынке перевозки грузов по Москве и области!
-                            </div></div></body></html>
+                            </div></div>
+<script type="text/javascript">
+   $(document).ready(function(){
+  $("#tabs_1").ionTabs();
+})
+</script>
+</body></html>

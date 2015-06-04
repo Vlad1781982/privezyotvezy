@@ -1,5 +1,5 @@
 body {
-    background: #f5f5f5 url(/images/bg_body.jpg) 0 212px repeat-x;
+    background: #f5f5f5 url(images/bg_body.jpg) 0 212px repeat-x;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -126,13 +126,13 @@ a.button {
     input[type="submit"].button.primary,
     a.button.primary {
         border: none;
-        background: #ffd10b url(/images/bg_h3.png) 0 0 repeat-x;
+        background: #ffd10b url(images/bg_h3.png) 0 0 repeat-x;
     }
 
         input[type="submit"].button.primary:hover,
         a.button.primary:hover {
             border: none;
-            background: #ffb20c url(/images/bg_h3_hover.png) 0 0 repeat-x;
+            background: #ffb20c url(images/bg_h3_hover.png) 0 0 repeat-x;
         }
 
     input[type="submit"].button:hover,
@@ -192,7 +192,7 @@ ul.menu {
 
 
 #header {
-    background: url(/images/bg_header.png) 50% 0 repeat-x;
+    background: url(images/bg_header.png) 50% 0 repeat-x;
 }
 
     #header ul.menu {
@@ -210,7 +210,7 @@ ul.menu {
     #header .logo {
         display: block;
         position: absolute;
-        background: url(/images/logo.png);
+        background: url(images/logo.png);
         width: 265px;
         height: 56px;
         left: 10px;
@@ -225,7 +225,7 @@ ul.menu {
         top: 40px;
         padding-left: 50px;
         height: 40px;
-        background: url(/images/ico_phone.png) 0 0 no-repeat;
+        background: url(images/ico_phone.png) 0 0 no-repeat;
         line-height: 40px;
     }
 
@@ -251,7 +251,7 @@ p.phones {
 }
 
 .slider-menu {
-    background: url(/images/bg_menu_slider.png) no-repeat;
+    background: url(images/bg_menu_slider.png) no-repeat;
     height: 216px;
     position: relative;
     margin-bottom: 20px;
@@ -288,35 +288,35 @@ ul.slider {
     }
 
         ul.slider li.item01 {
-            background-image: url(/images/bg_slider_ico1.png);
+            background-image: url(images/bg_slider_ico1.png);
         }
 
         ul.slider li.item02 {
-            background-image: url(/images/bg_slider_ico2.png);
+            background-image: url(images/bg_slider_ico2.png);
         }
 
         ul.slider li.item03 {
-            background-image: url(/images/bg_slider_ico3.png);
+            background-image: url(images/bg_slider_ico3.png);
         }
 
         ul.slider li.item04 {
-            background-image: url(/images/bg_slider_ico4.png);
+            background-image: url(images/bg_slider_ico4.png);
         }
 
         ul.slider li.item05 {
-            background-image: url(/images/bg_slider_ico5.png);
+            background-image: url(images/bg_slider_ico5.png);
         }
 
         ul.slider li .h3 {
             font-size: 32px;
             font-weight: bold;
             line-height: 1.35em;
-            background: url(/images/bg_slider_text.png) 50% 2px no-repeat;
+            background: url(images/bg_slider_text.png) 50% 2px no-repeat;
             margin-top: 0;
         }
 
         ul.slider li.girl .h3 {
-            background: url(/images/bg_slider_text0.png) 50% 2px no-repeat;
+            background: url(images/bg_slider_text0.png) 50% 2px no-repeat;
             padding-left: 140px;
             height: 107px;
             margin-top: -5px;
@@ -334,7 +334,7 @@ ul.slider {
 
 #header .wrapper {
     height: 266px;
-    background: url(/images/bg_header.jpg) no-repeat;
+    background: url(images/bg_header.jpg) no-repeat;
     position: relative;
 }
 
@@ -354,7 +354,7 @@ ul.slider {
     }
 
     .right-column .calc {
-        background: url(/images/bg_calc_btn.png) 0 0 no-repeat;
+        background: url(images/bg_calc_btn.png) 0 0 no-repeat;
         display: block;
         padding: 20px 8px 0 82px;
         height: 60px;
@@ -376,7 +376,7 @@ ul.slider {
                 width: 41px;
                 height: 31px;
                 position: absolute;
-                background: url(/images/calc.gif) no-repeat;
+                background: url(images/calc.gif) no-repeat;
                 top: 34px;
                 left: 26px;
             }
@@ -392,7 +392,7 @@ p.head {
 }
 
 .box {
-    background: #fff url(/images/box_gradient_top.png) 0 0 repeat-x;
+    background: #fff url(images/box_gradient_top.png) 0 0 repeat-x;
     border-radius: 10px;
     margin-bottom: 20px;
     border: 4px solid #fff;
@@ -400,7 +400,7 @@ p.head {
 }
 
 .boxx {
-    background: #fff url(/images/box_gradient_top.png) 0 0 repeat-x;
+    background: #fff url(images/box_gradient_top.png) 0 0 repeat-x;
     border-radius: 5px;
     margin-bottom: 12px;
     border: 4px solid #fff;
@@ -431,7 +431,7 @@ p.head {
         .tabs-head li.selected {
             font-size: 22px;
             border-radius: 8px 8px 0 0;
-            background: #ffd10b url(/images/bg_h3.png) 0 0 repeat-x;
+            background: #ffd10b url(images/bg_h3.png) 0 0 repeat-x;
         }
 
             .tabs-head li.selected a {
@@ -477,7 +477,7 @@ img.border {
 
 .box h1,
 .box .h1 {
-    background: #757575 url(/images/bg_h2.png) 0 0 repeat-x;
+    background: #757575 url(images/bg_h2.png) 0 0 repeat-x;
     color: #fff;
     font-weight: normal;
     font-size: 24px;
@@ -517,7 +517,7 @@ img.border {
     }
 
     .box .h3.icon.wallet {
-        background-image: url(/images/ico_wallet.png);
+        background-image: url(images/ico_wallet.png);
         background-position: 8px 6px;
         background-repeat: no-repeat;
     }
@@ -525,7 +525,7 @@ img.border {
 
 .right-column .box .h3,
 .box .h2.yellow {
-    background: #ffd10b url(/images/bg_h3.png) 0 0 repeat-x;
+    background: #ffd10b url(images/bg_h3.png) 0 0 repeat-x;
     font-size: 22px;
     font-weight: normal;
     border-radius: 8px;
@@ -593,60 +593,60 @@ ul.service {
             }
 
         ul.service li.serv1 a:before {
-            background-image: url(/images/service_ico1.png);
+            background-image: url(images/service_ico1.png);
         }
 
         ul.service li.serv2 a:before {
-            background-image: url(/images/service_ico2.png);
+            background-image: url(images/service_ico2.png);
         }
 
         ul.service li.serv3 a:before {
-            background-image: url(/images/service_ico3.png);
+            background-image: url(images/service_ico3.png);
         }
 
         ul.service li.serv4 a:before {
-            background-image: url(/images/service_ico4.png);
+            background-image: url(images/service_ico4.png);
         }
 
         ul.service li.serv5 a:before {
-            background-image: url(/images/service_ico5.png);
+            background-image: url(images/service_ico5.png);
         }
 
         ul.service li.serv6 a:before {
-            background-image: url(/images/service_ico6.png);
+            background-image: url(images/service_ico6.png);
         }
 
         ul.service li.serv7 a:before {
-            background-image: url(/images/service_ico7.png);
+            background-image: url(images/service_ico7.png);
         }
 
         ul.service li.serv8 a:before {
-            background-image: url(/images/service_ico8.png);
+            background-image: url(images/service_ico8.png);
         }
 
         ul.service li.serv9 a:before {
-            background-image: url(/images/service_ico9.png);
+            background-image: url(images/service_ico9.png);
         }
 
         ul.service li.serv10 a:before {
-            background-image: url(/images/service_ico10.png);
+            background-image: url(images/service_ico10.png);
         }
 
         ul.service li.serv11 a:before {
-            background-image: url(/images/service_ico11.png);
+            background-image: url(images/service_ico11.png);
         }
 
         ul.service li.serv12 a:before {
-            background-image: url(/images/service_ico12.png);
+            background-image: url(images/service_ico12.png);
         }
 
         ul.service li.serv13 a:before {
-            background-image: url(/images/service_ico13.png);
+            background-image: url(images/service_ico13.png);
         }
 
 
         ul.service li.serv14 a:before {
-            background-image: url(/images/car_type5.jpg);
+            background-image: url(images/car_type5.jpg);
         }
 
         ul.service li.serv15 a {
@@ -655,11 +655,11 @@ ul.service {
         }
 
             ul.service li.serv15 a:before {
-                background-image: url(/images/car_type8.jpg);
+                background-image: url(images/car_type8.jpg);
             }
 
         ul.service li.serv16 a:before {
-            background-image: url(/images/car_type9.jpg);
+            background-image: url(images/car_type9.jpg);
         }
 
 
@@ -680,7 +680,7 @@ a.zoom {
         display: block;
         content: "";
         position: absolute;
-        background: url(/images/btn_zoom.png);
+        background: url(images/btn_zoom.png);
         width: 25px;
         height: 25px;
         left: 0;
@@ -759,7 +759,7 @@ p.pagenav {
     }
 
 #footer {
-    background: url(/images/bg_footer.jpg) 0 0 repeat-x;
+    background: url(images/bg_footer.jpg) 0 0 repeat-x;
     margin: 20px 0 15px 0;
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
@@ -792,7 +792,7 @@ p.pagenav {
         top: 55px;
         right: 15px;
         font-size: 26px;
-        background: url(/images/ico_phone_footer.png) 0 50% no-repeat;
+        background: url(images/ico_phone_footer.png) 0 50% no-repeat;
         padding-left: 35px;
     }
 
@@ -828,7 +828,7 @@ p.pagenav {
 
     .review .name {
         padding-left: 25px;
-        background: url(/images/chat_mini.png) 0 0 no-repeat;
+        background: url(images/chat_mini.png) 0 0 no-repeat;
         font-style: italic;
         margin-bottom: 5px;
     }
@@ -851,11 +851,11 @@ p.pagenav {
         }
 
             .review p.vote a.plus {
-                background: url(/images/plus.png) 0 0 no-repeat;
+                background: url(images/plus.png) 0 0 no-repeat;
             }
 
             .review p.vote a.minus {
-                background: url(/images/minus.png) 0 0 no-repeat;
+                background: url(images/minus.png) 0 0 no-repeat;
             }
 
             .review p.vote a:hover {
@@ -911,7 +911,7 @@ p.pagenav {
     height: 12px;
     margin-left: 20px;
     margin-right: 5px;
-    background: url(/images/plus.png) 0 0 no-repeat;
+    background: url(images/plus.png) 0 0 no-repeat;
 }
 
 .calc_form a:hover span.plus {
@@ -997,23 +997,23 @@ p.pagenav {
         }
 
 a.ico-xls {
-    background: url(/images/xlsx_win-64_32.png) 50% 0 no-repeat;
+    background: url(images/xlsx_win-64_32.png) 50% 0 no-repeat;
 }
 
 a.ico-doc {
-    background: url(/images/docx_win-64_32.png) 50% 0 no-repeat;
+    background: url(images/docx_win-64_32.png) 50% 0 no-repeat;
 }
 
 a.ico-pdf {
-    background: url(/images/pdf-64_32.png) 50% 0 no-repeat;
+    background: url(/mages/pdf-64_32.png) 50% 0 no-repeat;
 }
 
 a.ico-rar {
-    background: url(/images/rar-64_32.png) 50% 0 no-repeat;
+    background: url(images/rar-64_32.png) 50% 0 no-repeat;
 }
 
 a.ico-zip {
-    background: url(/images/zip-64_32.png) 50% 0 no-repeat;
+    background: url(images/zip-64_32.png) 50% 0 no-repeat;
 }
 
 
@@ -1069,15 +1069,15 @@ a.ico-zip {
     }
 
         .car-photo .car-menu a.car-zoom {
-            background-image: url(/images/ico_zoom.png);
+            background-image: url(images/ico_zoom.png);
         }
 
         .car-photo .car-menu a.car-cart {
-            background-image: url(/images/ico_cart.png);
+            background-image: url(images/ico_cart.png);
         }
 
         .car-photo .car-menu a.car-calc {
-            background-image: url(/images/ico_calc.png);
+            background-image: url(images/ico_calc.png);
         }
 
         .car-photo .car-menu a:hover {
@@ -1138,23 +1138,23 @@ ul.services {
     }
 
     ul.services li.item01 {
-        background-image: url(/images/ico_service_01.png);
+        background-image: url(images/ico_service_01.png);
     }
 
     ul.services li.item02 {
-        background-image: url(/images/ico_service_02.png);
+        background-image: url(images/ico_service_02.png);
     }
 
     ul.services li.item03 {
-        background-image: url(/images/ico_service_03.png);
+        background-image: url(images/ico_service_03.png);
     }
 
     ul.services li.item04 {
-        background-image: url(/images/ico_service_04.png);
+        background-image: url(images/ico_service_04.png);
     }
 
     ul.services li.item05 {
-        background-image: url(/images/ico_service_05.png);
+        background-image: url(images/ico_service_05.png);
     }
 
     ul.services > li > a {
@@ -1185,7 +1185,7 @@ ul.services {
     .bubble ul {
         margin: 0;
         padding: 0;
-        list-style-image: url(/images/bullet.png);
+        list-style-image: url(images/bullet.png);
     }
         .bubble ul li {
             margin-bottom: 6px;
@@ -1235,7 +1235,7 @@ ul.services {
     display: inline-block;
     margin-left: 20px;
     padding-left: 30px;
-    background: url(/images/ico_mail.png) 0 50% no-repeat;
+    background: url(images/ico_mail.png) 0 50% no-repeat;
 }
 
 .add-client{
@@ -1278,18 +1278,18 @@ ul.services {
 .photos-wrapper .bx-wrapper .bx-prev {
 left: 0;
 height: 21px;
-background: url(/images/slider_arr_sprite.jpg) no-repeat 0 0;
+background: url(images/slider_arr_sprite.jpg) no-repeat 0 0;
 }
 .photos-wrapper .bx-wrapper .bx-next {
 right: 0;
 height: 21px;
-background: url(/images/slider_arr_sprite.jpg) no-repeat 0 -43px;
+background: url(images/slider_arr_sprite.jpg) no-repeat 0 -43px;
 }
 .photos-wrapper .bx-wrapper .bx-prev:hover {
-background: url(/images/slider_arr_sprite.jpg) no-repeat 0 -22px;
+background: url(images/slider_arr_sprite.jpg) no-repeat 0 -22px;
 }
 .photos-wrapper .bx-wrapper .bx-next:hover {
-background: url(/images/slider_arr_sprite.jpg) no-repeat 0 -65px;
+background: url(images/slider_arr_sprite.jpg) no-repeat 0 -65px;
 }
 .box .h5 {
     font-size: 22px;
@@ -1379,7 +1379,7 @@ list-style: none;
 .check_ul li{
 padding: 0 0 7px 22px;
 margin: 0 0 0 12px;
-background: url(/images/check_bul.png) no-repeat 0 3px;
+background: url(images/check_bul.png) no-repeat 0 3px;
 }
 ul.docslider li {
   text-align: center;
@@ -1404,7 +1404,7 @@ ul.docslider li {
 .left_quote{
 width: 33px;
 height: 28px;
-background: url(/images/quotes_sprite.png) no-repeat 0 0;
+background: url(images/quotes_sprite.png) no-repeat 0 0;
 position: absolute;
 top: 20px;
 left: 55px;
@@ -1412,7 +1412,7 @@ left: 55px;
 .right_quote{
 width: 33px;
 height: 28px;
-background: url(/images/quotes_sprite.png) no-repeat 0 -28px;
+background: url(images/quotes_sprite.png) no-repeat 0 -28px;
 position: absolute;
 bottom: 20px;
 right: 55px;
@@ -1442,7 +1442,7 @@ color: #110f02;
     text-align: center;
     line-height: 1.8;
     margin: 5px 0 0 -40px;
-    background: url(/images/big_check.png) no-repeat 3px 0;
+    background: url(images/big_check.png) no-repeat 3px 0;
 }
 .tariffs_cars tr{
   vertical-align: top;
@@ -1489,22 +1489,22 @@ border-radius: 5px;
 border: 3px solid #fce318;
 }
 .freight_types .type_1{
-background: url(/images/freight_icons.jpg) no-repeat 35px -175px;
+background: url(images/freight_icons.jpg) no-repeat 35px -175px;
 }
 .freight_types .type_2{
-background: url(/images/freight_icons.jpg) no-repeat 55px -70px;
+background: url(images/freight_icons.jpg) no-repeat 55px -70px;
 }
 .freight_types .type_3{
-background: url(/images/freight_icons.jpg) no-repeat 45px 28px;
+background: url(images/freight_icons.jpg) no-repeat 45px 28px;
 }
 .freight_types .type_4{
-background: url(/images/freight_icons.jpg) no-repeat 55px -285px;
+background: url(images/freight_icons.jpg) no-repeat 55px -285px;
 }
 .freight_types .type_5{
-background: url(/images/freight_icons.jpg) no-repeat 40px -415px;
+background: url(images/freight_icons.jpg) no-repeat 40px -415px;
 }
 .freight_types .type_6{
-background: url(/images/freight_icons.jpg) no-repeat 45px -553px;
+background: url(images/freight_icons.jpg) no-repeat 45px -553px;
 }
 .motivators{
 margin: 15px 0 0 0;
@@ -1531,13 +1531,13 @@ display: none;
 border-top: 5px solid #fddb13;
 }
 .motivators .m_1{
-background: url(/images/freight_icons.jpg) no-repeat 50px -680px;
+background: url(images/freight_icons.jpg) no-repeat 50px -680px;
 }
 .motivators .m_2{
-background: url(/images/freight_icons.jpg) no-repeat 40px -805px;
+background: url(images/freight_icons.jpg) no-repeat 40px -805px;
 }
 .motivators .m_3{
-background: url(/images/freight_icons.jpg) no-repeat 52px -972px;
+background: url(images/freight_icons.jpg) no-repeat 52px -972px;
 }
 .motivators a:hover span{
 display: none;
@@ -1557,17 +1557,17 @@ display: block;
     }
     .touchcarousel .arrow-holder.left {
         left: -35px !important;
-        background: url(/images/slider_arrow_left_black.jpg) 50% 50% no-repeat;
+        background: url(images/slider_arrow_left_black.jpg) 50% 50% no-repeat;
     }
     .touchcarousel .arrow-holder.right {
         right: -43px !important;
-        background: url(/images/slider_arrow_right_black.jpg) 50% 50% no-repeat;
+        background: url(images/slider_arrow_right_black.jpg) 50% 50% no-repeat;
     }
     .touchcarousel .arrow-holder.left:hover {
-        background: url(/images/slider_arrow_left_black_h.jpg) 50% 50% no-repeat;
+        background: url(images/slider_arrow_left_black_h.jpg) 50% 50% no-repeat;
     }
     .touchcarousel .arrow-holder.right:hover {
-        background: url(/images/slider_arrow_right_black_h.jpg) 50% 50% no-repeat;
+        background: url(/mages/slider_arrow_right_black_h.jpg) 50% 50% no-repeat;
     }
 /* slider settings */
 .touchcarousel {
@@ -1626,7 +1626,7 @@ display: block;
 .check_ul_2 li {
     padding: 3px 0 7px 30px;
     margin: 0 0 5px 15px;
-    background: url(/images/big_check.png) no-repeat 0 3px;
+    background: url(images/big_check.png) no-repeat 0 3px;
     font-size: 15px;
 }
 /* 27.03 конец */
@@ -1665,29 +1665,29 @@ border-radius: 5px;
 border: 3px solid #fce318;
 }
 .pereezd_types .type_1{
-background: url(/images/pereezd_icons.png) no-repeat 57px 15px;
+background: url(images/pereezd_icons.png) no-repeat 57px 15px;
 }
 .pereezd_types .type_2{
-background: url(/images/pereezd_icons.png) no-repeat 57px -130px;
+background: url(images/pereezd_icons.png) no-repeat 57px -130px;
 }
 .pereezd_types .type_3{
-background: url(/images/pereezd_icons.png) no-repeat 48px -275px;
+background: url(images/pereezd_icons.png) no-repeat 48px -275px;
 }
 .pereezd_types .type_4{
-background: url(/images/pereezd_icons.png) no-repeat 65px -437px;
+background: url(images/pereezd_icons.png) no-repeat 65px -437px;
 }
 .pereezd_types .type_5{
-background: url(/images/pereezd_icons.png) no-repeat 53px -590px;
+background: url(images/pereezd_icons.png) no-repeat 53px -590px;
 }
 .pereezd_types .type_6{
-background: url(/images/pereezd_icons.png) no-repeat 65px -730px;
+background: url(images/pereezd_icons.png) no-repeat 65px -730px;
 }
 /* 08.04.2015 конец */
 
 /* 10.04 начало */
 .tariff_b{
 padding: 1px 0 5px 57px;
-background: url(/images/list_icon.gif) no-repeat 15px 0;
+background: url(images/list_icon.gif) no-repeat 15px 0;
 margin-bottom: 15px;
 }
 .tariff_b a{
@@ -1786,10 +1786,10 @@ display: block;
 padding: 65px 0 10px 0;
 font-size: 18px; 
 font-weight: bold;
-background: url(/images/freight_icons.jpg) no-repeat 45px 19px;
+background: url(images/freight_icons.jpg) no-repeat 45px 19px;
 }
 .serv_item ul{
-list-style-image: url(/images/bullet.png);
+list-style-image: url(images/bullet.png);
 text-align: left;
 padding: 0;
 float: left;  
@@ -1811,7 +1811,7 @@ text-decoration: underline;
 .serv_item .ul_b_1{
 border-radius: 5px;
 position: relative;
-background: url(/images/serv_b_bg.png) repeat-x 0 0; 
+background: url(images/serv_b_bg.png) repeat-x 0 0; 
 display: block; 
 height: 80px;
 }
@@ -1869,21 +1869,21 @@ height: 94px;
 margin: 0 10px 0 90px;
 }
 .serv_item_1  a.icon_b{
-background: url(/images/freight_icons.jpg) no-repeat 70px -1135px;
+background: url(images/freight_icons.jpg) no-repeat 70px -1135px;
 }
 .serv_item_2  a.icon_b{
-background: url(/images/freight_icons.jpg) no-repeat 45px 20px;
+background: url(images/freight_icons.jpg) no-repeat 45px 20px;
 }
 .serv_item_3  a.icon_b{
-background: url(/images/freight_icons.jpg) no-repeat 40px -1268px;
+background: url(images/freight_icons.jpg) no-repeat 40px -1268px;
 }
 .serv_item_4  a.icon_b{
 padding: 75px 0 10px 0;
-background: url(/images/freight_icons.jpg) no-repeat 60px -1410px;
+background: url(images/freight_icons.jpg) no-repeat 60px -1410px;
 }
 .serv_item_5  a.icon_b{
 padding: 75px 0 10px 0;
-background: url(/images/freight_icons.jpg) no-repeat 70px -1555px;
+background: url(images/freight_icons.jpg) no-repeat 70px -1555px;
 }
 /* 14.04 конец */
 /* 29.05 начало */

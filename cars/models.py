@@ -7,6 +7,7 @@ from imagekit.processors import ResizeToFill
 # Create your models here.
 class Cars(models.Model):
     title=models.CharField('Модель', max_length=200)
+    price=models.IntegerField('Стоимость от...')
     carrying=models.IntegerField('Грузоподъемность')
     minorder=models.CharField('Минимальный заказ', max_length=200)
     addtime=models.CharField('Дополнительное время', max_length=200)
@@ -23,4 +24,24 @@ class Cars(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.title
-    
+
+
+
+class CarGroups(models.Model):
+    title=models.CharField('Грузоподъемность', max_length=200)
+    price=models.IntegerField('Стоимость от...')
+    minorder=models.CharField('Минимальный заказ', max_length=200)
+    addtime=models.CharField('Дополнительное время', max_length=200)
+    mkad=models.IntegerField('Выезд за мкад')
+    photo=ProcessedImageField(verbose_name='Фото',upload_to='media/',
+                                           processors=[ResizeToFill(120, 70)],
+                                           format='JPEG',
+                                           options={'quality': 80})
+
+
+    class Meta:
+        verbose_name = ('По грузоподъемности')
+        verbose_name_plural = ('По грузоподъемности')
+
+    def __unicode__(self):
+        return u'%s' % self.title
