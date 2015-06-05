@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0025)http://www.sferatrans.ru/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% load staticfiles %}
+
+<title>ДЕШЕВЫЕ грузовые перевозки по Москве! НЕДОРОГИЕ грузоперевозки по Москве и области!</title>
+<meta name="description" content="Предлагаем транспортные услуги: грузовые перевозки, перевозка и доставка грузов по Москве и Московской области.">
+<meta name="keywords" content="грузовые перевозки по москве, транспортные услуги, грузоперевозки москва, перевозки москва, транспортные перевозки, заказать газель, перевозка грузов москва, доставка грузов москва">
+
+ <link href="{% static 'mainpage/css/easytabs.css' %}" rel="stylesheet" type="text/css">
+
+<!-- jquery.qtip plugin -->
+<script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.hashchange.min.js' %}"></script>
+
+</head>
+<body>
+<div id="tab-container" class="tab-container">
+  <ul class='etabs'>
+    <li class='tab'><a href="#tabs1-html">Борта</a></li>
+    <li class='tab'><a href="#tabs1-js">По грузоподъемности</a></li>
+  </ul>
+  <div id="tabs1-html">
+    <ul>
+    {% for car in cars %}
+    <li><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td><img src="{{car.photo.url}}"/></td>
+                  <td>{{ car.title }}<br>
+                      от 2000 руб.</p>
+                </td></tr>
+                <tr>
+                  <td>Грузоподъемность: </td>
+                  <td>{{ car.carrying }} кг</td>
+                </tr>
+                <tr>
+                  <td>Мин. заказ: </td>
+                  <td>{{ car.minorder }} + 1 час</td>
+                </tr>
+                <tr>
+                  <td>Доп. время: </td>
+                  <td>{{ car.addtime }}</td>
+                </tr>
+                <tr>
+                  <td>Выезд за МКАД: </td>
+                  <td>{{ car.mkad }} руб./км</td>
+                </tr>
+              </tbody></table>
+    </li>
+    {% endfor %}
+</ul>
+  </div>
+  <div id="tabs1-js">
+    <ul>
+        {% for group in groups %}
+                                    <li>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody><tr>
+                                                <td>
+                                                    <img src="{{group.photo.url}}">
+                                                    
+                                                </td>
+                                                <td>
+       <p>Подробнее</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <span class="head">
+                                                    
+                                                            Грузоперевозки до {{ group.title }} тонн<br>
+                                                    
+                                                        от {{ group.price }} руб.
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Мин. заказ: </td>
+                                                <td>{{ group.minorder }} + 1 час</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Доп. время: </td>
+                                                <td>{{ group.addtime }} руб./час</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Выезд за МКАД: </td>
+                                                <td>{{ group.mkad }} руб./км</td>
+                                            </tr>
+                                        </tbody></table>
+                                    </li>
+                                    {% endfor %}
+</ul>
+   
+    <!-- content -->
+  </div>
+  
+</div> 
+<script type="text/javascript">
+$('#tab-container').easytabs();
+
+</script>  
+</body>
+</html>

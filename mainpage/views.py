@@ -11,3 +11,15 @@ def index(request):
     cars=Cars.objects.all()
     groups=CarGroups.objects.all()
     return render(request, 'mainpage/index.html', {'cars':cars, 'groups':groups})
+
+
+
+def test1(request):
+	cars=Cars.objects.all()
+    groups=CarGroups.objects.all()
+    return render(request, 'mainpage/test1.html', {'cars':cars, 'groups':groups})
+
+def test2(request):
+	cars=Cars.objects.all()
+    groups=CarGroups.objects.all()
+    return render(request, 'mainpage/test2.html', {'cars':cars, 'groups':groups})

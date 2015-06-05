@@ -61,7 +61,9 @@ INSTALLED_APPS = (
     'pymorphy',
     'cars',
     'callback',
+    'djangular',
     'news',
+    'imagekit',
 )
 
 MIDDLEWARE_CLASSES = (

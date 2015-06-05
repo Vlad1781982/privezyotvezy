@@ -2,7 +2,9 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from imagekit.models import ProcessedImageField
+from imagekit.admin import AdminThumbnail
 from imagekit.processors import ResizeToFill
+from djangular.views.crud import NgCRUDView
 
 # Create your models here.
 class Cars(models.Model):
@@ -16,6 +18,7 @@ class Cars(models.Model):
                                            processors=[ResizeToFill(120, 70)],
                                            format='JPEG',
                                            options={'quality': 80})
+    visible=models.BooleanField('Видимость')
 
 
     class Meta:
@@ -25,6 +28,19 @@ class Cars(models.Model):
     def __unicode__(self):
         return u'%s' % self.title
 
+
+class CarView(NgCRUDView):
+    model = Cars
+
+
+class CarInline(admin.TabularInline)
+    model = Cars
+
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'admin_thumbnail','title', 'price', 'minorder', 'addtime', 'mkad', 'photo', 'visible')
+    admin_thumbnail = AdminThumbnail(image_field='photo')
+    tabular=[CarInline]
 
 
 class CarGroups(models.Model):
@@ -37,6 +53,7 @@ class CarGroups(models.Model):
                                            processors=[ResizeToFill(120, 70)],
                                            format='JPEG',
                                            options={'quality': 80})
+    visible=models.BooleanField('Видимость')
 
 
     class Meta:
@@ -45,3 +62,16 @@ class CarGroups(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.title
+
+class GroupInline(admin.TabularInline)
+    model = CarGroups
+
+class GroupAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'admin_thumbnail','title', 'price', 'minorder', 'addtime', 'mkad', 'photo', 'visible')
+    admin_thumbnail = AdminThumbnail(image_field='photo')
+    tabular=[GroupInline]
+
+
+
+class GroupView(NgCRUDView):
+    model = CarGroups

@@ -1,6 +1,8 @@
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from mainpage.models import CarView,GroupView
+from django.views.generic import TemplateView
 
 """sitetransport URL Configuration
 
@@ -24,6 +26,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^$', 'mainpage.views.index'),
+    url(r'^test1/', 'mainpage.views.test1'),
+    url(r'^test2/', 'mainpage.views.test2'),
+    url(r'^crud/cars/?$', CarView.as_view(), name='my_car_view'),
+    url(r'^crud/groups/?$', GroupView.as_view(), name='my_group_view'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
