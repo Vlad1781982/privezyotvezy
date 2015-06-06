@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.contrib import admin
 from ckeditor.fields import RichTextField
 from imagekit.models import ProcessedImageField
 from imagekit.admin import AdminThumbnail
@@ -18,7 +19,7 @@ class Cars(models.Model):
                                            processors=[ResizeToFill(120, 70)],
                                            format='JPEG',
                                            options={'quality': 80})
-    visible=models.BooleanField('Видимость')
+    visible=models.BooleanField('Видимость', default=True)
 
 
     class Meta:
@@ -33,7 +34,7 @@ class CarView(NgCRUDView):
     model = Cars
 
 
-class CarInline(admin.TabularInline)
+class CarInline(admin.TabularInline):
     model = Cars
 
 
@@ -53,7 +54,7 @@ class CarGroups(models.Model):
                                            processors=[ResizeToFill(120, 70)],
                                            format='JPEG',
                                            options={'quality': 80})
-    visible=models.BooleanField('Видимость')
+    visible=models.BooleanField('Видимость', default=True)
 
 
     class Meta:
@@ -63,7 +64,7 @@ class CarGroups(models.Model):
     def __unicode__(self):
         return u'%s' % self.title
 
-class GroupInline(admin.TabularInline)
+class GroupInline(admin.TabularInline):
     model = CarGroups
 
 class GroupAdmin(admin.ModelAdmin):

@@ -8,10 +8,14 @@
 <meta name="keywords" content="грузовые перевозки по москве, транспортные услуги, грузоперевозки москва, перевозки москва, транспортные перевозки, заказать газель, перевозка грузов москва, доставка грузов москва">
 
  <link href="{% static 'mainpage/css/easytabs.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'mainpage/script/jquery-ui-1.11.4.custom/jquery-ui.min.css' %}" rel="stylesheet" type="text/css">
 
 <!-- jquery.qtip plugin -->
 <script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.hashchange.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jquery-ui-1.11.4.custom/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.easytabs.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/vendor/jquery.hashchange.min.js' %}"></script>
+  jquery-ui-1.11.4.custom
 
 </head>
 <body>
@@ -58,7 +62,7 @@
                                             <tbody><tr>
                                                 <td>
                                                     <img src="{{group.photo.url}}">
-                                                    
+
                                                 </td>
                                                 <td>
        <p>Подробнее</p>
@@ -67,9 +71,9 @@
                                             <tr>
                                                 <td colspan="2">
                                                     <span class="head">
-                                                    
+
                                                             Грузоперевозки до {{ group.title }} тонн<br>
-                                                    
+
                                                         от {{ group.price }} руб.
                                                     </span>
                                                 </td>
@@ -90,14 +94,14 @@
                                     </li>
                                     {% endfor %}
 </ul>
-   
+
     <!-- content -->
   </div>
-  
-</div> 
-<script type="text/javascript">
-$('#tab-container').easytabs();
 
-</script>  
+</div>
+<script type="text/javascript">
+$('#tab-container').easytabs({uiTabs: true});
+
+</script>
 </body>
 </html>

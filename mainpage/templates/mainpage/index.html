@@ -7,17 +7,20 @@
 <meta name="description" content="Предлагаем транспортные услуги: грузовые перевозки, перевозка и доставка грузов по Москве и Московской области.">
 <meta name="keywords" content="грузовые перевозки по москве, транспортные услуги, грузоперевозки москва, перевозки москва, транспортные перевозки, заказать газель, перевозка грузов москва, доставка грузов москва">
 
- <link href="{% static 'mainpage/css/iontabs/css/ion.tabs.css' %}" rel="stylesheet" type="text/css">
- <link href="{% static 'mainpage/css/iontabs/css/ion.tabs.skinBordered.css' %}" rel="stylesheet" type="text/css">
-
-
+ <link href="{% static 'mainpage/css/style.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/css/xstyle.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/css/jquery.fancybox.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/css/jquery.bxslider.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/css/jquery.qtip.min.css' %}" rel="stylesheet" type="text/css">
 
 <!-- jquery.qtip plugin -->
 <script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jquery-ui-1.11.4.custom/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.easytabs.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/vendor/jquery.hashchange.min.js' %}"></script>
 
  <script type="text/javascript" async="" src="{% static 'mainpage/script/watch.js' %}"></script>
  <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider.js' %}"></script>
- <script type="text/javascript" src="{% static 'mainpage/script/jquery.tipTip.js' %}"></script>
 
 <script>
 $(function(){
@@ -176,181 +179,11 @@ $(function(){
   <div class="columns nc">
                 <h1 class="boxx mainpageboxx">ТЭК «СфераТранс» - недорогие грузоперевозки по Москве и области!</h1>
     <div class="main-column">
-    <div class="box">
-
-
-      <div class="ionTabs" id="tabs_1" data-name="Tabs_Group_name">
-        <ul class="ionTabs__head">
-                                <li class="ionTabs__tab" data-target="Tab_1_name">Автопарк</li>
-                                <li class="ionTabs__tab" data-target="Tab_2_name">По грузоподъемности</li>
-        </ul>
-        <div class=ionTabs__body">
-        <div class="ionTabs__item" data-name="Tab_1_name">
-                                <ul class="cars">
-
-
-        {% for car in cars %}
-         <li>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="{{car.photo.url}}"/></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/">{{ car.title }}</a><br>
-                      от 2000 руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Каблук (Fiat, Peugeot) 500кг." data-auto_title="Заказать перевозку на &quot;Каблуке&quot;" data-auto_id="1" class="button fancytext">Заказать</a></p>
-
-                </td></tr>
-                <tr>
-                  <td>Грузоподъемность: </td>
-                  <td>{{ car.carrying }} кг</td>
-                </tr>
-                <tr>
-                  <td>Мин. заказ: </td>
-                  <td>{{ car.minorder }} + 1 час</td>
-                </tr>
-                <tr>
-                  <td>Доп. время: </td>
-                  <td>{{ car.addtime }}</td>
-                </tr>
-                <tr>
-                  <td>Выезд за МКАД: </td>
-                  <td>{{ car.mkad }} руб./км</td>
-                </tr>
-              </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="1" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
-            </li>
-        {%  endfor %}
-                                </ul>
-        </div>
-
-
-
-        <div class="ionTabs__item" data-name="Tab_2_name">
-                                <ul class="cars types">
-                                    {% for group in groups %}
-                                    <li>
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody><tr>
-                                                <td>
-                                                    <a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom">
-                                                        <img src="{{group.photo.url}}">
-                                                    </a>
-                                                </td>
-                                                <td>
-       <p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="button ">Подробнее</a></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <span class="head">
-                                                        <a href="http://www.sferatrans.ru/avtopark/kabluk/">
-                                                            Грузоперевозки до {{ group.title }} тонн<br>
-                                                        </a>
-                                                        от {{ group.price }} руб.
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Мин. заказ: </td>
-                                                <td>{{ group.minorder }} + 1 час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Доп. время: </td>
-                                                <td>{{ group.addtime }} руб./час</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Выезд за МКАД: </td>
-                                                <td>{{ group.mkad }} руб./км</td>
-                                            </tr>
-                                        </tbody></table>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-
-        </div>
-        <div class="ionTabs__preloader"></div>
-        </div>
-
-
-
-
-    </div>  
-    </div>
+        {% block maincol %}{% endblock %}
     </div>
     <div class="right-column"> 
-                    <a href="http://www.sferatrans.ru/calc/" class="calc hasTip" onclick="yaCounter25323134.reachGoal(&#39;calccol&#39;); return true;">
-                        Калькулятор<br>
-                        стоимости услуг
-                        <div class="tip">ОНЛАЙН калькулятор стоимости грузоперевозок по Москве, Московской области и городам России.
-</div>
-                    </a>
-      <div class="box">
-        <div class="tabs">
-          <ul class="tabs-head nc">
-                                <li class="selected"><a href="http://www.sferatrans.ru/#tips">Отзывы</a></li>
-                                <li><a href="http://www.sferatrans.ru/#faq">Вопрос-ответ</a></li>
-          </ul>
-          <div id="faq" style="display: none;">
-<p><a href="http://www.sferatrans.ru/voprosy/minimalnaya-stoimost-10-tonnika-dlya-perevozki-po-moskve/">Какова минимальная стоимость заказа 10-тонника для перевозки по Москве?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/kakoj-gruz-yavlyaetsya-negabaritnym/">Какой груз является негабаритным?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/pereezd-pod-kljuch-otlichiya/">Чем «переезд под ключ» отличается от обычного переезда?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/prigorodnye-gruzoperevozki/">Занимаетесь ли вы пригородными грузоперевозками? </a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/chto-takoe-ekspedirovanie/">Что такое экспедирование?</a></p>
-          </div>
-          <div id="tips" style="display: block;">
-<div class="review">
-                                    <p class="name">Олег Феоктистов, руководитель фирмы недвижимости, 12  декабря  2014</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="108">+9 </a><a href="javascript:;" data-oid="108" class="minus otzyv_down">-1 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/oleg-feoktistov-rukovoditel-firmy-nedvizhimosti/">Удивительно, но факт – с этой транспортной компанией не только можно...</a></p>
-                                </div>
-<div class="review">
-                                    <p class="name">Милена, Москва, 4  августа  2014</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="56">+10 </a><a href="javascript:;" data-oid="56" class="minus otzyv_down">-3 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/milena-moskva/">Если задумаетесь о переезде, то, не мешкая, обращайтесь...</a></p>
-                                </div>
-<div class="review">
-                                    <p class="name">Никита Мартьянов, дизайнер, 21  января  2015</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="118">+7 </a><a href="javascript:;" data-oid="118" class="minus otzyv_down">-2 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/nikita-martyanov-dizajner/">Про меня немногочисленные друзья и родные говорят «человек...</a></p>
-                                </div>
-          </div>
-        </div>
-      </div>  
-        <div class="box">
-                        <div class="h3"><a href="http://www.sferatrans.ru/novosti/">Новости</a></div>
-<div class=" news">
-            <p class="date">01  июня  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-06-01/">Движение между Садовым кольцом и ТТК упорядочат</a></p>
-            <p>Центр организации дорожного движения Москвы намерен улучшить транспортную ситуацию в столице. Ради этого разрабатывается масштабный проект...&nbsp;</p>
-          </div>
-<div class=" news">
-            <p class="date">29  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-29/">«Росгосстрах» не может продавать полисы ОСАГО</a></p>
-            <p>Одна из важных новостей недели, которая коснулась всех водителей, включая тех, кто перевозит грузы, доставляет мебель и т.д., - запрет на...&nbsp;</p>
-          </div>
-<div class=" news">
-            <p class="date">28  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-28/">«Выделенка» появится на Звенигородском шоссе</a></p>
-            <p>Водителям, включая сотрудников транспортной компании «СфераТранс», доставляющих грузы по Москве, стоит быть готовыми к тому, что...&nbsp;</p>
-          </div>
-        </div>
-        <div class="box">
-                        <div class="h3">Подписка на новости</div>
-	        <p align="right">
-            <label>Ваш e-mail:
-              <input type="text" name="email" class="subscribeform required" id="mail">
-            </label>
-            </p>
-<p id="subscribeform_err" align="right" style="display: none;"></p>
-            <p align="right" id="subscribeform_result">
-            <input name="" type="submit" class="button" id="subscribeform_go" value="Подписаться на рассылку!" onclick="yaCounter25323134.reachGoal(&#39;dist&#39;); return true;">
-            </p>
-                            <p>
-                            </p>
-        </div>
-      </div>
+    {% block rightcol %}{% endblock %}
+    </div>
     </div>
     <div class="clr"></div>
     <div class="box">
@@ -700,10 +533,8 @@ $(function(){
 <script type="text/javascript"  src="{% static 'mainpage/script/jquery.fancybox.js' %}"></script>
 <script type="text/javascript"  src="{% static 'mainpage/script/cform.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/typeahead.min.js' %}"></script>
-<script type="text/javascript" async="" src="{% static 'mainpage/css/iontabs/js/ion-tabs/ion.tabs.js' %}"></script>
 <script type="text/javascript"  src="{% static 'mainpage/script/calcmain.js' %}"></script>
 <script type="text/javascript"  src="{% static 'mainpage/script/scripts.js' %}"></script>
-<script type="text/javascript"  src="{% static 'mainpage/script/jquery.qtip.min.js' %}"></script>
 
 
 <noindex>
@@ -717,8 +548,7 @@ $(function(){
                                 Транспортная компания «СфераТранс» - с 1999 года на рынке перевозки грузов по Москве и области!
                             </div></div>
 <script type="text/javascript">
-   $(document).ready(function(){
-  $("#tabs_1").ionTabs();
-})
+$('.tabs').easytabs({uiTabs: true});
+
 </script>
 </body></html>

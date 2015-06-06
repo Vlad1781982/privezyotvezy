@@ -14,12 +14,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <!-- jquery.qtip plugin -->
-<script type="text/javascript" src="{% static 'mainpage/script/angular.min.js %}"></script>
+<script type='text/javascript' src="{% static 'mainpage/script/angular.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/angular-sanitize.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/angular-locale_ru-ru.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/angular-animate.js' %}"></script>
@@ -86,6 +86,7 @@ app.controller('carCtrl', ['$scope', 'Restangular', function($scope, Restangular
     </tab>
 
     <tab>
+        {% verbatim %}
       <ul>
                                     <li ng-repeat="tabs in tabstwo">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
