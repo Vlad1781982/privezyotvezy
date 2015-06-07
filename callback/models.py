@@ -8,9 +8,12 @@ from slugify import slugify_ru
 # Create your models here.
 class Callback(models.Model):
     title=models.CharField('Заголовок', max_length=200)
+    slug=models.SlugField(max_length=45, pk=True)
     body=models.TextField('Содержание отзыва', max_length=3000)
     author=models.CharField('Автор', max_length=200)
     place=models.CharField('Место проживания', max_length=300, blank=True)
+    date=models.DateField('Дата написания', auto_now_add=True, blank=True, null=True)
+
 
     class Meta:
         verbose_name = ('Отзыв')
@@ -21,11 +24,12 @@ class Callback(models.Model):
 
 
     def save(self, *args, **kwargs):
-        self.title=self.body[:250]
+        self.title=self.body[:60]
+        self.slug = slugify_url(self.title, max_length=40)
         return super(Callback, self).save(*args, **kwargs)
 
 class CallbackAdmin(admin.ModelAdmin):
-    exclude = ('title',)
+    exclude = ('title','slug',)
 
 
 

@@ -64,6 +64,11 @@ INSTALLED_APPS = (
     'djangular',
     'news',
     'imagekit',
+    'questions',
+    'gruzoperevozki',
+    'cottage',
+    'office',
+    'flat',
 )
 
 MIDDLEWARE_CLASSES = (

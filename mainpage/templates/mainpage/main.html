@@ -1,0 +1,99 @@
+{% extends 'mainpage/index.html' %}
+{% block maincol %}
+    <div class="box">
+
+<div class="tabs">
+        <ul class="tabs-head nc">
+                                <li class="hasTip">
+                                    <a href="#cars1">Грузовой автопарк</a>
+                                </li>
+                                <li class="hasTip">
+                                    <a href="#cars2"> По грузоподъемности</a>
+                                </li>
+        </ul>
+        <div id="cars1" class="nc">
+        <ul class="cars">
+
+         {% for car in cars %}
+         <li>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="{{ car.photo.url }}"></a></td>
+                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/">{{ car.title }}</a><br>
+                      от {{ car.price }} руб.</p>
+
+       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Каблук (Fiat, Peugeot) 500кг." data-auto_title="Заказать перевозку на &quot;Каблуке&quot;" data-auto_id="1" class="button fancytext">Заказать</a></p>
+
+                </td></tr>
+                <tr>
+                  <td>Грузоподъемность: </td>
+                  <td>{{ car.carrying }}кг</td>
+                </tr>
+                <tr>
+                  <td>Мин. заказ: </td>
+                  <td>{{ car.minorder }} + 1 час</td>
+                </tr>
+                <tr>
+                  <td>Доп. время: </td>
+                  <td>{{ car.addtime }} руб./час</td>
+                </tr>
+                <tr>
+                  <td>Выезд за МКАД: </td>
+                  <td>{{ car.mkad }} руб./км</td>
+                </tr>
+              </tbody></table>
+
+        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="1" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
+
+            </li>
+            {% endfor %}
+       </ul>
+  </div>
+
+  <div id="cars2" class="nc" style="display: none;">
+                                <ul class="cars types">
+                                    {% for group in groups %}
+                                    <li>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody><tr>
+                                                <td>
+                                                    <a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom">
+                                                        <img src="{{ group.photo.url }}">
+                                                    </a>
+                                                </td>
+                                                <td>
+       <p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="button ">Подробнее</a></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <span class="head">
+                                                        <a href="http://www.sferatrans.ru/avtopark/kabluk/">
+                                                            Грузоперевозки до {{ group.title }}тонн<br>
+                                                        </a>
+                                                        от {{ group.price }} руб.
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Мин. заказ: </td>
+                                                <td>{{ group.minoprder }} + 1 час</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Доп. время: </td>
+                                                <td>{{ group.addtime }} руб./час</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Выезд за МКАД: </td>
+                                                <td>{{ group.mkad }} руб./км</td>
+                                            </tr>
+                                        </tbody></table>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+    <!-- content -->
+  </div>
+</div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+<ul>
+    {% for car in cars %}
+    <li><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td><img src="{{car.photo.url}}"/></td>
+                  <td>{{ car.title }}<br>
+                      от 2000 руб.</p>
+                </td></tr>
+                <tr>
+                  <td>Грузоподъемность: </td>
+                  <td>{{ car.carrying }} кг</td>
+                </tr>
+                <tr>
+                  <td>Мин. заказ: </td>
+                  <td>{{ car.minorder }} + 1 час</td>
+                </tr>
+                <tr>
+                  <td>Доп. время: </td>
+                  <td>{{ car.addtime }}</td>
+                </tr>
+                <tr>
+                  <td>Выезд за МКАД: </td>
+                  <td>{{ car.mkad }} руб./км</td>
+                </tr>
+              </tbody></table>
+    </li>
+    {% endfor %}
+</ul>

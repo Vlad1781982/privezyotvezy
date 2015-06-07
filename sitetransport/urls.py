@@ -31,6 +31,12 @@ urlpatterns = [
     url(r'^test2/', 'mainpage.views.test2'),
     url(r'^crud/cars/?$', CarView.as_view(), name='my_car_view'),
     url(r'^crud/groups/?$', GroupView.as_view(), name='my_group_view'),
+    url(r'^gruzoperevozki/', 'gruzoperevozki.views.gruzoperevozki'),
+    url(r'^flat/', 'flat.views.flat'),
+    url(r'^cottage/', 'cottage.views.cottage'),
+    url(r'^office/', 'office.views.office'),
+    url(r'^questions/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'questions.views.question'),
+    url(r'^callbacks/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'callback.views.callback'),
 
 ]
 
