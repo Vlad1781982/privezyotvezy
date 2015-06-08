@@ -8,7 +8,7 @@ from slugify import slugify_ru
 # Create your models here.
 class Callback(models.Model):
     title=models.CharField('Заголовок', max_length=200)
-    slug=models.SlugField(max_length=45, pk=True)
+    slug=models.SlugField(max_length=45, null=True, blank=True)
     body=models.TextField('Содержание отзыва', max_length=3000)
     author=models.CharField('Автор', max_length=200)
     place=models.CharField('Место проживания', max_length=300, blank=True)

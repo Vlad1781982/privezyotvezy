@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from slugify import slugify_url
-
+from django.contrib import admin
 
 class Question(models.Model):
     title=models.CharField('Название вопроса', max_length=500)
-    slug=models.SlugField(max_lenghth=60, pk=True)
+    slug=models.SlugField(max_length=60, null=True, blank=True)
     content=models.TextField('Вопрос')
     answer=models.TextField('Ответ')
 
