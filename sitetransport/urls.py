@@ -24,6 +24,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^form-callback.html$', 'mainpage.views.formcallback', name="formcallback.html"),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^$', 'mainpage.views.index'),
     url(r'^test1/', 'mainpage.views.test1'),
@@ -35,6 +36,7 @@ urlpatterns = [
     url(r'^flat/', 'flat.views.flat'),
     url(r'^cottage/', 'cottage.views.cottage'),
     url(r'^office/', 'office.views.office'),
+    url(r'^cars/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'cars.views.car_detail'),
     url(r'^questions/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'questions.views.question'),
     url(r'^callbacks/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'callback.views.callback'),
 

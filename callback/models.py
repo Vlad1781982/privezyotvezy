@@ -13,6 +13,7 @@ class Callback(models.Model):
     author=models.CharField('Автор', max_length=200)
     place=models.CharField('Место проживания', max_length=300, blank=True)
     date=models.DateField('Дата написания', auto_now_add=True, blank=True, null=True)
+    visible=models.BooleanField('Видимость', default=False)
 
 
     class Meta:

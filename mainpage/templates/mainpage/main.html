@@ -19,10 +19,8 @@
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tbody><tr>
                   <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="{{ car.photo.url }}"></a></td>
-                  <td><p class="head"><a href="http://www.sferatrans.ru/avtopark/kabluk/">{{ car.title }}</a><br>
+                  <td><p class="head"><a href="/cars/{{car.slug}}">{{ car.title }}</a><br>
                       от {{ car.price }} руб.</p>
-
-       <p><a href="http://www.sferatrans.ru/#order" data-auto_name="Каблук (Fiat, Peugeot) 500кг." data-auto_title="Заказать перевозку на &quot;Каблуке&quot;" data-auto_id="1" class="button fancytext">Заказать</a></p>
 
                 </td></tr>
                 <tr>
@@ -42,9 +40,7 @@
                   <td>{{ car.mkad }} руб./км</td>
                 </tr>
               </tbody></table>
-
-        <p><a href="http://www.sferatrans.ru/#calc" data-auto_id="1" class="button fancytext">Рассчитать стоимость онлайн!</a></p>
-
+        <p><a href="#"><p>Рассчитать стоимость онлайн!</p></a></p>
             </li>
             {% endfor %}
        </ul>

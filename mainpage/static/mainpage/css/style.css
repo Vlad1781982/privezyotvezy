@@ -412,7 +412,6 @@ p.head {
 }
 
 .tabs-head {
-    border-bottom: 1px solid #ffd10b;
     margin: 0 -12px 20px -12px;
     padding: 0;
     list-style: none;
@@ -524,7 +523,6 @@ img.border {
 
 .right-column .box .h3,
 .box .h2.yellow {
-    background: #ffd10b url(images/bg_h3.png) 0 0 repeat-x;
     font-size: 22px;
     font-weight: normal;
     border-radius: 8px;
@@ -669,7 +667,7 @@ ul.cars li td {
 
 a.zoom {
     padding: 1px;
-    border-bottom: 1px solid #ffd10b;
+    border-bottom: 1px solid #4F616F;
     float: left;
     position: relative;
     margin-bottom: 26px;
@@ -1915,7 +1913,7 @@ text-decoration: none;
     background-image: linear-gradient(bottom, #222222 0%, #555555 100%);
     float: left;
     position: relative;
-    width: 25%;
+    width: 20%;
 }
 
 #nav li:first-child, #nav li:first-child a {
@@ -1932,9 +1930,9 @@ text-decoration: none;
 #nav a {
     border-right: 1px solid #222;
     border-left: 1px solid #555;
-    color: #ccc;
+    color: rgb(255, 255, 255);
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     height: 50px;
     overflow: hidden;
     text-align: center;

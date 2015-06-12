@@ -69,6 +69,7 @@ INSTALLED_APPS = (
     'cottage',
     'office',
     'flat',
+    'fancybox',
 )
 
 MIDDLEWARE_CLASSES = (

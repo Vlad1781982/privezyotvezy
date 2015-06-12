@@ -9,6 +9,7 @@ from slugify import slugify_ru
 class News(models.Model):
     title=models.CharField('Заголовок новости', max_length=400)
     content=models.TextField('Содержание новости')
+    data=models.DateField('Дата создания', auto_now_add=True, blank=True, null=True)
 
     class Meta:
         verbose_name = ('Новость')

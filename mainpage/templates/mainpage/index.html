@@ -3,24 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% load staticfiles %}
 
-<title>ДЕШЕВЫЕ грузовые перевозки по Москве! НЕДОРОГИЕ грузоперевозки по Москве и области!</title>
+<title>PrivezyOtvezy НЕДОРОГИЕ грузоперевозки по Москве и области!</title>
 <meta name="description" content="Предлагаем транспортные услуги: грузовые перевозки, перевозка и доставка грузов по Москве и Московской области.">
 <meta name="keywords" content="грузовые перевозки по москве, транспортные услуги, грузоперевозки москва, перевозки москва, транспортные перевозки, заказать газель, перевозка грузов москва, доставка грузов москва">
 
  <link href="{% static 'mainpage/css/style.css' %}" rel="stylesheet" type="text/css">
  <link href="{% static 'mainpage/css/xstyle.css' %}" rel="stylesheet" type="text/css">
  <link href="{% static 'mainpage/css/jquery.fancybox.css' %}" rel="stylesheet" type="text/css">
- <link href="{% static 'mainpage/css/jquery.bxslider.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'mainpage/script/jquery.bxslider/jquery.bxslider.css' %}" rel="stylesheet" type="text/css">
  <link href="{% static 'mainpage/css/jquery.qtip.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'mainpage/script/slick-1.5.0/slick.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'mainpage/script/slick-1.5.0/slick-theme.css' %}" rel="stylesheet" type="text/css">
+    {% block CSS %}{% endblock %}
 
 <!-- jquery.qtip plugin -->
 <script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jquery-ui-1.11.4.custom/jquery-ui.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.easytabs.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/vendor/jquery.hashchange.min.js' %}"></script>
-
- <script type="text/javascript" async="" src="{% static 'mainpage/script/watch.js' %}"></script>
- <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider.js' %}"></script>
+ <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider/jquery.bxslider.js' %}"></script>
+{% block JS %}{% endblock %}
 
 <script>
 $(function(){
@@ -64,19 +66,15 @@ $(function(){
 </script>
 <!-- jquery-скрипты общего назначения -->
 <script type="text/javascript" src="./index_files/jquery.common.forms.js"></script>
+{% include "fancybox/fancybox_css.html" %}
 </head>
 
 <body style="zoom: 1;">
 
 <div id="header">
-  <div class="wrapper"> <a href="./index_files/index.html" class="logo"></a>
-    <ul class="menu">
-    	<li><a href="http://www.sferatrans.ru/company/">О нас</a></li>
-        <li><a href="http://www.sferatrans.ru/price/">Прайс-лист</a></li>
-        <li><a href="http://www.sferatrans.ru/kontakty/">Контакты</a></li>
-    </ul>
-    <div class="phones"> <a href="tel:84997057791">8-(499) 705-77-91</a>, <a href="tel:84956425808">8-(495) 642-58-08</a> </div>    
-    <a href="http://www.sferatrans.ru/#callback" class="callback fancytext" onclick="yaCounter25323134.reachGoal(&#39;zvonok&#39;); return true;">Закажите обратный звонок</a> </div>
+  <div class="wrapper"> <a href="/" class="logo"></a>
+    <div class="phones"> <a href="tel:84997057791">8-(926) 843-32-44</a></div>
+    <a href="http://www.sferatrans.ru/#callback" class="callback fancytext">Оформите заказ услуг</a></div>
 </div>
 <div id="content">
 
@@ -84,25 +82,18 @@ $(function(){
 <div class="slider-menu nc">
     <div id="nav">
         <ul>
-            <li><a href="#"><span>Dashboard</span></a></li>
-            <li><a href="#"><span>Posts</span></a></li>
+            <li><a href="/gruzoperevozki/"><span>Грузовые перевозки</span></a></li>
+            <li><a href="/flat/"><span>Квартирный переезд</span></a></li>
             <!--<li class="dropdown"><a href="#"><span>Users</span></a>
                 <ul>
                     <li><a href="#"><span>Joshua Hibbert</span></a></li>
                     <li><a href="#"><span>Kyle Bragger</span></a></li>
                     <li><a href="#"><span>Jack Rugile</span></a></li>
                 </ul>
-            </li>--->
-            <li class="dropdown"><a href="#"><span>Settings</span></a>
-                <ul>
-                    <li><a href="#"><span>General</span></a></li>
-                    <li><a href="#"><span>SEO</span></a></li>
-                    <li><a href="#"><span>Style</span></a></li>
-                    <li><a href="#"><span>Plugins</span></a></li>
-                    <li><a href="#"><span>Security</span></a></li>
-                </ul>
-            </li>
-            <li><a href="#"><span>View Site</span></a></li>
+            </li>-->
+            <li><a href="/office/"><span>Переезд офиса</span></a></li>
+            <li><a href="/cottage/"><span>Дачный переезд</span></a></li>
+            <li><a href="#"><span>Услуги грузчиков</span></a></li>
         </ul>
         </div>
     <div id="navslider">
@@ -111,14 +102,14 @@ $(function(){
 </div>
 
   <div class="columns nc">
-                <h1 class="boxx mainpageboxx">ТЭК «СфераТранс» - недорогие грузоперевозки по Москве и области!</h1>
+                <h1 class="boxx mainpageboxx">PRIVEZYOTVEZY - недорогие грузоперевозки по Москве и области!</h1>
     <div class="main-column">
         {% block maincol %}{% endblock %}
     </div>
     <div class="right-column"> 
 
         {% block rightcol %}
-        <a href="http://www.sferatrans.ru/calc/" class="calc hasTip" onclick="yaCounter25323134.reachGoal(&#39;calccol&#39;); return true;">
+        <a href="http://www.sferatrans.ru/calc/" class="calc hasTip">
                         Калькулятор<br>
                         стоимости услуг
 
@@ -131,7 +122,7 @@ $(function(){
           </ul>
           <div id="faq" style="display: none;">
               {% for question in questions %}
-<p><a href="/questions/{{ question.slug }}">{{ question.content }}</a></p>
+<p><a href="/questions/{{ question.slug }}">{{ question.content}}</a></p>
               {% endfor %}
           </div>
           <div id="tips" style="display: block;">
@@ -139,45 +130,25 @@ $(function(){
 <div class="review">
 
                                     <p class="name">{{ callback.author }}   {{ callback.place }}</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="108">+9 </a><a href="javascript:;" data-oid="108" class="minus otzyv_down">-1 </a></p>
-                                    <p><a href="/callbacks/{{ callbac.slug }}">{{ callback.title }}</a></p>
+                                    <p><a href="/callbacks/{{ callback.slug }}">{{ callback.title|slice:":80" }}</a>...</p>
 
 </div>
   {% endfor %}
+  <a class="fancybox" href="{% url 'formcallback.html' %}"><p>Оставить отзыв</p></a>
           </div>
         </div>
       </div>
         <div class="box">
-                        <div class="h3"><a href="http://www.sferatrans.ru/novosti/">Новости</a></div>
+
+            <div class="h3"><a href="http://www.sferatrans.ru/novosti/">Новости</a></div>
+            {% for new in news %}
 <div class=" news">
-            <p class="date">01  июня  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-06-01/">Движение между Садовым кольцом и ТТК упорядочат</a></p>
-            <p>Центр организации дорожного движения Москвы намерен улучшить транспортную ситуацию в столице. Ради этого разрабатывается масштабный проект...&nbsp;</p>
+
+            <p class="date">{{ new.data }}</p>
+            <p class="head"><a href="/news/{{new.slug}}">{{ new.title }}</a></p>
+            <p>{{ new.content|slice:":60" }}...</p>
           </div>
-<div class=" news">
-            <p class="date">29  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-29/">«Росгосстрах» не может продавать полисы ОСАГО</a></p>
-            <p>Одна из важных новостей недели, которая коснулась всех водителей, включая тех, кто перевозит грузы, доставляет мебель и т.д., - запрет на...&nbsp;</p>
-          </div>
-<div class=" news">
-            <p class="date">28  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-28/">«Выделенка» появится на Звенигородском шоссе</a></p>
-            <p>Водителям, включая сотрудников транспортной компании «СфераТранс», доставляющих грузы по Москве, стоит быть готовыми к тому, что...&nbsp;</p>
-          </div>
-        </div>
-        <div class="box">
-                        <div class="h3">Подписка на новости</div>
-	        <p align="right">
-            <label>Ваш e-mail:
-              <input type="text" name="email" class="subscribeform required" id="mail">
-            </label>
-            </p>
-<p id="subscribeform_err" align="right" style="display: none;"></p>
-            <p align="right" id="subscribeform_result">
-            <input name="" type="submit" class="button" id="subscribeform_go" value="Подписаться на рассылку!" onclick="yaCounter25323134.reachGoal(&#39;dist&#39;); return true;">
-            </p>
-                            <p>
-                            </p>
+            {% endfor %}
         </div>
     {% endblock %}
     </div>
@@ -187,118 +158,6 @@ $(function(){
        <div class="h1">Почему Сфератранс - лучший выбор?</div>
 <p>Обратившись к нам, Вы можете быть уверенны, что СфераТранс не подведёт! Качественно и своевременно выполнит ВСЕ взявшие на себя обязательства вне зависимости от объема предполагаемых работ.</p>
       <div class="h3">Среди наших клиентов</div>
-                <div class="clients-wrapper">
-                    <div class="bx-wrapper"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 85px;"><ul class="clients" style="width: 2365%; position: relative; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2600px, 0px, 0px);"><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_fototeh.jpg' %}">
-                            </a>
-                            <div class="tip">Компания «ФОТОТЕХ»</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_kvmrent.jpg' %}">
-                            </a>
-                            <div class="tip">ООО "КВМ"</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_metasyntez.jpg' %}">
-                            </a>
-                            <div class="tip">ЗАО "МетаСинтез"</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_siesta.jpg' %}">
-                            </a>
-                            <div class="tip">ООО "Сиеста"</div>
-                        </li>
-
-
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo1.jpg' %}">
-                            </a>
-                            <div class="tip">ЗАО "Цезарь Сателлит"</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo2.jpg' %}">
-                            </a>
-                            <div class="tip">MaXFactor (МаксФактор)</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo3.jpg' %}">
-                            </a>
-                            <div class="tip">Российский Государственный Гуманитарный Университет</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo4.jpg' %}">
-                            </a>
-                            <div class="tip">АльфаКлуб (АльфаБанк)</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo5.jpg' %}">
-                            </a>
-                            <div class="tip">Дирекция всемирных боевых искусств</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo6.jpg' %}">
-                            </a>
-                            <div class="tip">Московский Туристический Флот</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo7.jpg' %}">
-                            </a>
-                            <div class="tip">ФГУП Медтехника</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_fototeh.jpg' %}">
-                            </a>
-                            <div class="tip">Компания «ФОТОТЕХ»</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_kvmrent.jpg' %}">
-                            </a>
-                            <div class="tip">ООО "КВМ"</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_metasyntez.jpg' %}">
-                            </a>
-                            <div class="tip">ЗАО "МетаСинтез"</div>
-                        </li>
-                        <li class="hasTip" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_siesta.jpg' %}">
-                            </a>
-                            <div class="tip">ООО "Сиеста"</div>
-                        </li>
-                    <li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo1.jpg' %}">
-                            </a>
-                            <div class="tip">ЗАО "Цезарь Сателлит"</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo2.jpg' %}">
-                            </a>
-                            <div class="tip">MaXFactor (МаксФактор)</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo3.jpg' %}">
-                            </a>
-                            <div class="tip">Российский Государственный Гуманитарный Университет</div>
-                        </li><li class="hasTip bx-clone" style="float: left; list-style: none; position: relative; width: 200px;">
-                            <a href="http://www.sferatrans.ru/company/nashi-klienty/">
-                                <img src="{% static 'mainpage/img/clients_logo4.jpg' %}">
-                            </a>
-                            <div class="tip">АльфаКлуб (АльфаБанк)</div>
-                        </li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
-      </div>  
                 <div class="h3">Транспортная компания СфераТранс это:</div>   
        <ol>
          <li>Только проверенная техника, только лучшие специалисты!</li>
@@ -307,34 +166,6 @@ $(function(){
          <li>Всё под контролем! Все наши автомобили оборудованы системой спутникого слежения.</li>
          <li>Гарантируем результат! Отвечаем на все 100% за Ваш груз. </li>
        </ol>
-                <div class="h3">Наши документы</div>
-
-<div class="clients-wrapper docs-wrapper">
-                <div class="bx-wrapper"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 106px;"><ul class="docs docslider" style="width: 2580%; position: relative; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-420px, 0px, 0px);"><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/price-tehnika.xls" class="ico-xls">Скачать прайс-лист на спецтехнику</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/price-uslugi.xls" class="ico-xls">Скачать прайс-лист на переезды, грузчиков</a></li><li style="display: none; float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/#" class="ico-xls">Документ XLS</a></li><li style="display: none; float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/#" class="ico-pdf">Документ PDF</a></li><li style="display: none; float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/#" class="ico-rar">Документ Архива</a></li><li style="display: none; float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/#" class="ico-zip">Документ Архива 2</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/dogovor-of.doc" class="ico-doc">Скачать договор на переезд офиса</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/dogovor-gruz.doc" class="ico-doc">Скачать договор на перевозку груза</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/pereezd-kv.doc" class="ico-doc">Скачать договор на переезд квартиры</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/akt.xlsx" class="ico-xls">Скачать акт и счет-фактуру</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/card.doc" class="ico-doc">Скачать карточку с реквизитами</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/price-all.xls" class="ico-xls">Скачать прайс-лист на грузовые перевозки</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/price-tehnika.xls" class="ico-xls">Скачать прайс-лист на спецтехнику</a></li>
-
-<li style="float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/uploads/prices/price-uslugi.xls" class="ico-xls">Скачать прайс-лист на переезды, грузчиков</a></li>
-
-
-                    <li style="display: none; float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/#" class="ico-xls">Документ XLS</a></li>
-                    <li style="display: none; float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/#" class="ico-pdf">Документ PDF</a></li>
-                    <li style="display: none; float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/#" class="ico-rar">Документ Архива</a></li>
-                    <li style="display: none; float: left; list-style: none; position: relative; width: 180px;"><a href="http://www.sferatrans.ru/#" class="ico-zip">Документ Архива 2</a></li>
-                <li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/dogovor-of.doc" class="ico-doc">Скачать договор на переезд офиса</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/dogovor-gruz.doc" class="ico-doc">Скачать договор на перевозку груза</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/pereezd-kv.doc" class="ico-doc">Скачать договор на переезд квартиры</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/akt.xlsx" class="ico-xls">Скачать акт и счет-фактуру</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/card.doc" class="ico-doc">Скачать карточку с реквизитами</a></li><li style="float: left; list-style: none; position: relative; width: 180px;" class="bx-clone"><a href="http://www.sferatrans.ru/uploads/prices/price-all.xls" class="ico-xls">Скачать прайс-лист на грузовые перевозки</a></li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
-</div>
 
     </div>
   </div>
@@ -528,15 +359,6 @@ $(function(){
 
 
 <script type="text/javascript"  src="{% static 'mainpage/script/jquery.fancybox.js' %}"></script>
-<script type="text/javascript"  src="{% static 'mainpage/script/cform.js' %}"></script>
-<script type="text/javascript" src="{% static 'mainpage/script/typeahead.min.js' %}"></script>
-<script type="text/javascript"  src="{% static 'mainpage/script/calcmain.js' %}"></script>
-<script type="text/javascript"  src="{% static 'mainpage/script/scripts.js' %}"></script>
-
-
-<noindex>
-<!--LiveInternet counter--><script type="text/javascript">document.write('<a href="http://www.liveinternet.ru/click" target=_blank><img src="http://counter.yadro.ru/hit?t45.11;r' + escape(document.referrer) + ((typeof(screen)=='undefined')?'':';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ';u' + escape(document.URL) + ';' + Math.random() + '" border=0 width=1 height=1 alt="" title="LiveInternet"></a>')</script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./index_files/hit" border="0" width="1" height="1" alt="" title="LiveInternet"></a><!--/LiveInternet-->
-</noindex>
 
 <!-- jquery qtip plugin -->
 
@@ -544,8 +366,11 @@ $(function(){
 <div id="tiptip_holder" style="max-width: 300px; margin: 473px 0px 0px 746px; display: none;" class="tip_bottom"><div id="tiptip_arrow" style="margin-left: 144px; margin-top: -12px;"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content">
                                 Транспортная компания «СфераТранс» - с 1999 года на рынке перевозки грузов по Москве и области!
                             </div></div>
+
 <script type="text/javascript">
 $('.tabs').easytabs({uiTabs: true});
-
 </script>
+
+{% block ExtraJS %}{% endblock %}
+{% include "fancybox/fancybox_js.html" %}
 </body></html>
