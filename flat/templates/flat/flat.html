@@ -4,17 +4,17 @@
 {% block maincol %}
     <div class="box">
 <h1>Квартирный переезд недорого по Москве и области</h1>
+  <p>{{sub.sub1}}</p>
 
-              <p>Сколько времени занимает квартирный переезд? Давайте посчитаем. Пара дней, чтобы уложить одежду и книги. Три дня, чтобы разобрать и упаковать мебель. Еще день, чтобы найти грузовик и день на сам переезд…. Итого неделя. Неделя, потраченная впустую!</p>
-
-<div class="h5">А ведь можно провести квартирный переезд за несколько часов!</div>
-
-
+<div class="slider_wrapper">
 <ul class="carousel">
-  <li><img src="{% static 'mainpage/img/flat1.jpg' %}"/></li>
-  <li><img src="{% static 'mainpage/img/flat2.jpg' %}"/></li>
-  <li><img src="{% static 'mainpage/img/flat3.jpg' %}"/></li>
+  {% for img in photos %}
+  <li><img src="{{img.photo.url}}"/></li>
+    {% endfor %}
 </ul>
+</div>
+    </div>
+{% endblock %}
 
 <div class="h5">Цена на квартирный переезд</div>
 <p>* Обычно на проведение квартирного переезда выезжают 2 или 4 специалиста.</p>
@@ -53,12 +53,15 @@
 </tbody>
 </table>
     </div>
+
+    <p>{{ sub.sub2}}</p>
+
 {% endblock %}
 {% block ExtraJS %}
 <script>
 $('.carousel').bxSlider({
-  adaptiveHeight: true,
-  mode: 'fade'
+  auto: true,
+  autoControls: true
 });
 </script>
 {% endblock %}

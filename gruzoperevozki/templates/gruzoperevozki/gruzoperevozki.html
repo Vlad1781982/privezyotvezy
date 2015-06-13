@@ -1,9 +1,9 @@
 {% extends 'mainpage/index.html' %}
 {% block maincol %}
+{% load staticfiles %}
     <div class="box">
 <h1>Грузоперевозки от  «Сфератранс»</h1>
-
-
+<p> {{sub.sub1}}
 <div class="h5" id="price_table">Автопарк «Сфератранс»</div>
 
 <p><a href="http://www.sferatrans.ru/avtopark/">Более 40 машин различных типов</a> – от маленьких скромных «каблучков» до 20-тонных еврофур. маршруты любой сложности и множество услуг на должном уровне качества. Мы умеем обходить заторы, простои, отвратительные дорожные условия и другие проблемы. Экономично и динамично!</p>
@@ -24,39 +24,25 @@
 </tbody>
 </table>
 
-<div class="h5">Транспортная компания СфераТранс это</div>
-
-<div class="digit_b">
-    <div class="big_check"></div>
-    <div class="digit_h">Только проверенная техника</div>
-    и только лучшие специалисты!
+<p>{{sub.sub2}}</p>
+<div class="slider_wrapper">
+<ul class="carousel">
+    {% for img in photos %}
+  <li><img src="{{img.photo.url}}"/></li>
+    {% endfor %}
+</ul>
 </div>
-
-<div class="digit_b">
-    <div class="big_check"></div>
-    <div class="digit_h">Безупречный сервис!</div>
-    Ваши <a href="http://www.sferatrans.ru/gruzoperevozki/po-moskve/">перевозки по Москве и области</a> – гарантированно точно в срок.
-</div>
-
-<div class="digit_b">
-    <div class="big_check"></div>
-    <div class="digit_h">Удобство</div>
-                    У нас можно заказать весь комплекс сопутствующих услуг (<a href="http://www.sferatrans.ru/pereezd/">переезды</a>, <a href="http://www.sferatrans.ru/perevozka-mebeli/">доставка мебели</a>, <a href="http://www.sferatrans.ru/takelazhnye-raboty/">такелажные работы</a> и.т.д.)
-</div>
-
-<div class="digit_b">
-    <div class="big_check"></div>
-    <div class="digit_h">Всё под контролем!</div>
-    Все наши автомобили оборудованы системой спутникого слежения.
-</div>
-
-<div class="digit_b">
-    <div class="big_check"></div>
-    <div class="digit_h">Гарантируем результат!</div>
-                    Отвечаем на все 100% за Ваш груз.
-</div>
-
     </div>
+{% endblock %
+    </div>
+{% endblock %}
+{% block ExtraJS %}
+<script>
+$('.carousel').bxSlider({
+  auto: true,
+  autoControls: true
+});
+</script>
 {% endblock %}
 
 

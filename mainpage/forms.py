@@ -21,3 +21,38 @@ class CallbackForm(forms.Form):
         max_length = 2000,
         required = True,
      )
+
+
+class OrderForm(forms.Form):
+     name = forms.CharField(
+        label="Ваше имя",
+        max_length = 200,
+        required = True,
+     )
+     phone=forms.CharField(
+        label="Ваш телефон",
+        max_length = 20,
+        required = True,
+     )
+
+     placefrom=forms.CharField(
+        label="Откуда",
+        max_length=400,
+        required=True,
+        )
+     placeto=forms.CharField(
+        label="Куда",
+        max_length=400,
+        required=True,
+        )
+     comments=forms.CharField(
+        label="Комментарии",
+        max_length=3000,
+        required=False,
+        )
+
+     def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Отправить'))

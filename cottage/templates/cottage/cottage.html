@@ -1,9 +1,26 @@
 {% extends 'mainpage/index.html' %}
+{% load staticfiles %}
 {% block maincol %}
-    <div class="box">
-    <h1>{{ question.content }}</h1>
-    <p>{{ question.answer }}</p>
+     <div class="box">
+<h1>Дачный переезд</h1>
+    <p>{{sub.sub1}}</p>
+<div class="slider_wrapper">
+<ul class="carousel">
+	{% for img in photos %}
+  <li><img src="{{img.photo.url}}"/></li>
+    {% endfor %}
+</ul>
+</div>
     </div>
 {% endblock %}
 
-
+     <p>{{sub.sub2}}</p>
+     
+{% block ExtraJS %}
+<script>
+$('.carousel').bxSlider({
+  mode: 'vertical',
+  slideMargin: 5
+});
+</script>
+{% endblock %}

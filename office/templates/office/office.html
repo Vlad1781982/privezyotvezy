@@ -3,18 +3,9 @@
      <div class="box">
 <h1>Офисный переезд Москва и область КАЧЕСТВЕННО</h1>
 
-              <p>Что значит – удачно перевезти офис? Критериев не так уж и много:</p>
-
-			<ul class="check_ul">
-				<li>Вы «втиснулись» в бюджет,</li>
-				<li>потратили минимум рабочего времени,</li>
-				<li>сохранили все нужные архивы</li>
-				<li>… и приступили к работе сразу после переселения – без всякой уборки и расстановки вещей.</li>
-			</ul>
+              <p>{{sub.sub1}}</p>
 
 			<div class="h5">Цены на переезд компании </div>
-
-			<p>* В стоимость входят: мебельный фургон и необходимое кол-во грузчиков. При необходимости для оценки бесплатно выезжает оценщик.</p>
 
 			<table class="tariffs" cellpadding="8" cellspacing="2" border="0" width="100%">
 			<tbody>
@@ -45,9 +36,25 @@
 			</tr>
 			</tbody>
 			</table>
-
-
+<div class="slider_wrapper">
+<ul class="carousel">
+  {% for img in photos %}
+  <li><img src="{{img.photo.url}}"/></li>
+    {% endfor %}
+</ul>
+</div>
     </div>
+{% endblock %}
+ <p>{{sub.sub2}}
+    </div>
+{% endblock %}
+{% block ExtraJS %}
+<script>
+$('.carousel').bxSlider({
+  auto: true,
+  autoControls: true
+});
+</script>
 {% endblock %}
 
 
