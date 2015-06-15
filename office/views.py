@@ -5,8 +5,8 @@ from news.models import News
 from texts.models import OfficeTexts, OfficePhoto
 
 def office(request):
-	photos=OfficePhoto.objects.all()
-	sub=OfficeTexts.objects.all()
+    photos=OfficePhoto.objects.all()
+    sub=OfficeTexts.objects.all()
     callbacks=Callback.objects.order_by('-date')[:3]
     news=News.objects.order_by('-data')[:3]
     questions=Question.objects.all()

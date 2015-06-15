@@ -3,6 +3,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from cars.models import CarView,GroupView
 from django.views.generic import TemplateView
+from django.views.generic import TemplateView
 
 """sitetransport URL Configuration
 
@@ -24,7 +25,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^form-callback.html$', 'mainpage.views.formcallback', name="formcallback.html"),
+    url(r'^form-callback/', 'mainpage.views.formcallback', name="formcallback.html"),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^$', 'mainpage.views.index'),
     url(r'^test1/', 'mainpage.views.test1'),

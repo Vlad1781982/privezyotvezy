@@ -15,9 +15,9 @@
 <link href="{% static 'mainpage/script/slick-1.5.0/slick.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/script/slick-1.5.0/slick-theme.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'mainpage/css/ButtonStylesInspiration/ButtonStylesInspiration/css/buttons.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'mainpage/css/ButtonStylesInspiration/ButtonStylesInspiration/css/base.css' %}" rel="stylesheet" type="text/css">
+<!--<link href="{% static 'mainpage/css/ButtonStylesInspiration/ButtonStylesInspiration/css/base.css' %}" rel="stylesheet" type="text/css">-->
 <link href="{% static 'mainpage/css/CreativeLinkEffects/CreativeLinkEffects/css/component.css' %}" rel="stylesheet" type="text/css">
-    
+
     {% block CSS %}{% endblock %}
 
 <!-- jquery.qtip plugin -->
@@ -28,62 +28,22 @@
  <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider/jquery.bxslider.js' %}"></script>
 {% block JS %}{% endblock %}
 
-<script>
-$(function(){
-	
-	$('div.slider-menu ul.slider').bxSlider({
-		auto: true,
-		mode: 'fade',
-	  	pager: false
-	});
-	$('ul.docslider').bxSlider({
-	  minSlides: 4,
-	  maxSlides: 6,
-	  speed: 1500,
-	  pause: 2000,
-	  pager: false,	  
-	  auto: false,
-	  moveSlides: 1,
-	  slideWidth: 180,
-	});
-
-	$('ul.clients').bxSlider({
-	  minSlides: 4,
-	  maxSlides: 4,
-	  speed: 1500,
-	  pause: 2000,
-	  pager: false,	  
-	  auto: true,
-	  moveSlides: 1,
-	  slideWidth: 220,
-	});
-	
-
-                $("#grinputsbox").click(function() {
-                    $("#grtimepicker").hide();
-                    if (parseInt($(this).find("input:checked").prop("value")) > 0) {
-                        $("#grtimepicker").show();
-                    }
-                });
-
-});
-</script>
-<!-- jquery-скрипты общего назначения -->
-<script type="text/javascript" src="./index_files/jquery.common.forms.js"></script>
 {% include "fancybox/fancybox_css.html" %}
 </head>
 
 <body style="zoom: 1;">
 
 <div id="header">
-  <div class="wrapper"> <a href="/" class="logo"></a>
+  <a href="/" class="logo"><div class="wrapper">
     <div class="phones"> <a href="tel:84997057791">8-(926) 843-32-44</a></div>
-    <a href="http://www.sferatrans.ru/#callback" class="callback fancytext">Оформите заказ услуг</a></div>
+    <nav class="cl-effect-12" id="cl-effect-12">
+    <a class="callback" href="/orders/" data-hover="Оформите заказ услуг">Оформите заказ услуг</a>
+    </nav>
+      </div></a>
 </div>
 <div id="content">
 
-<div class="wrapper">
-<div class="slider-menu nc">
+<a href="/"></a><div class="wrapper">
     <div id="nav">
         <ul>
             <li><a href="/gruzoperevozki/"><span>Грузовые перевозки</span></a></li>
@@ -97,16 +57,17 @@ $(function(){
             </li>-->
             <li><a href="/office/"><span>Переезд офиса</span></a></li>
             <li><a href="/cottage/"><span>Дачный переезд</span></a></li>
-            <li><a href="#"><span>Услуги грузчиков</span></a></li>
+            <li><a href="/loaders/"><span>Услуги грузчиков</span></a></li>
+            <li><a href="/bus/"><span>Автобусные перевозки</span></a></li>
         </ul>
         </div>
-    <div id="navslider">
 
-    </div>
-</div>
-
+    <ul class="slider">
+            <li><a href="/bus/"><img src="{% static 'mainpage/css/images/Slider1.jpg' %}"/></a></li>
+            <li><a href="/gruzoperevozki/"><img src="{% static 'mainpage/css/images/Slider2.jpg' %}"/></a></li>
+    </ul>
   <div class="columns nc">
-                <h1 class="boxx mainpageboxx">www.PRIVEZYOTVEZY.ru - недорогие грузоперевозки по Москве и области!</h1>
+                <h1 class="boxx mainpageboxx" style="font-family:'CuprumFFU' ">www.privezyotvezy.ru - недорогие грузоперевозки по Москве и области!</h1>
     <div class="main-column">
         {% block maincol %}{% endblock %}
     </div>
@@ -132,13 +93,14 @@ $(function(){
           <div id="tips" style="display: block;">
  {% for callback in callbacks %}
 <div class="review">
-
+{% if callback.visible %}
                                     <p class="name">{{ callback.author }}   {{ callback.place }}</p>
                                     <p><a href="/callbacks/{{ callback.slug }}">{{ callback.title|slice:":80" }}</a>...</p>
-
+{% else %}
+{% endif %}
 </div>
   {% endfor %}
-  <a class="fancybox" href="{% url 'formcallback.html' %}"><p>Оставить отзыв</p></a>
+  <a href="/form-callback/"><p>Оставить отзыв</p></a>
           </div>
         </div>
       </div>
@@ -183,13 +145,13 @@ $(function(){
       <li><a href="http://www.sferatrans.ru/kontakty/">Контакты</a></li>
     </ul>
             <div class="copyright">
-                1999 - 2015 © ТЭК «СфераТранс».<br>
+                2015 © www.privezyotvezy.ru<br>
                 Дешевые грузоперевозки Москва, область и Россия!<br>
-                <a href="http://vashpartner.ru/">"Ваш Партнер" - создание и продвижение сайта</a>
+                <a href="http://vladimirzyuzin.ru">Создание сайта</a>
 
             </div>
-            <div class="phones"><a href="tel:84997057791">8-(499) 705-77-91</a>, <a href="tel:84956425808">8-(495) 642-58-08</a> </div>
-            <a href="http://www.sferatrans.ru/#" class="callback">127106, Москва, Сигнальный проезд, д.5</a>
+            <div class="phones"><a href="tel:84997057791">8-(926) 843-32-44</a> </div>
+            <a href="http://www.sferatrans.ru/#" class="callback"></a>
  </div>
 </div>
 <div id="callback" class="popup">
@@ -373,6 +335,12 @@ $(function(){
 
 <script type="text/javascript">
 $('.tabs').easytabs({uiTabs: true});
+</script>
+<script>
+ $(document).ready(function(){
+  $('.slider').bxSlider({auto: true,slideMargin: 0,infiniteLoop: true,autoControls: true,
+        controls: false});
+});
 </script>
 
 {% block ExtraJS %}{% endblock %}

@@ -1,17 +1,25 @@
-{% extends request.is_ajax|yesno:"fancybox/base.html,site_base.html" %}
+{% extends "mainpage/index.html" %}
+{% load staticfiles %}
+
+{% block maincol %}
+<div class="box">
+
 <form action="" method="post">
+<h1>Заполните отзыв</h1>
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Submit" />
-</form>
-{% if errors %}
+    <input type="submit" value="Отправить" />
+
+    {% if errors %}
         <ul>
             {% for error in errors %}
-                <li style="color: red;">{{ error }}</li>
+                <li style="color: #194072;">{{ error }}</li>
             {% endfor %}
         </ul>
 {% endif %}
-<p>Ну а лучше позвоните нам!</p>
+
+</form>
+
 <style>
 
 /* Базовый стиль формы */
@@ -35,7 +43,7 @@ form {
 /* Поле сообщения */
 textarea{
     background: rgba(255, 255, 255, 0.4); 
-    width: 100%;
+    width: 70%;
     height: 110px;
     border: 1px solid rgba(255,255,255,.6);
     -moz-border-radius: 4px;
@@ -57,8 +65,8 @@ textarea{
 }
 /* Поля ввода */
 input {
-    width: 100%;
-    height: 48px;
+    width: 60%;
+    height: 20px;
     border: 1px solid rgba(255,255,255,.4);
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -76,7 +84,11 @@ input {
     margin-bottom:20px;
 }
 input[type=submit] {
+    width: 30%;
+    height: 40px;
     cursor:pointer;
+    color: #626E7B;
+
 }
 input.name {
     background: rgba(255, 255, 255, 0.4); 
@@ -164,4 +176,20 @@ input:focus, textarea:focus {
     box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
     outline: none;
 }
+.errorlist {
+    display: none;
+}
+
+label {
+    font-size:18px;
+    font-family: 'MerriweatherBold';
+}
+
+form p {
+    font-size: 18px;
+    font-family: 'MerriweatherBold';
+}
+
 </style>
+</div>
+{% endblock %}

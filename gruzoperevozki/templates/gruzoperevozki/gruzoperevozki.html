@@ -1,8 +1,9 @@
 {% extends 'mainpage/index.html' %}
-{% block maincol %}
 {% load staticfiles %}
+
+{% block maincol %}
     <div class="box">
-<h1>Грузоперевозки от  «Сфератранс»</h1>
+<h1>Грузоперевозки</h1>
 <p> {{sub.sub1}}
 <div class="h5" id="price_table">Автопарк «Сфератранс»</div>
 
@@ -17,7 +18,9 @@
     </td>
     <td>
         <a href="http://www.sferatrans.ru/avtopark/kabluk/">Грузоперевозки на {{ car.title }}</a>   <span>от {{ car.price }} руб.</span><br>
-        <a class="button small fancytext" data-auto_id="1" href="http://www.sferatrans.ru/gruzoperevozki/#calc">Рассчитать стоимость онлайн!</a>
+        <nav>
+        <a>Рассчитать стоимость онлайн!</a>
+        </nav>
     </td>
 </tr>
 {% endfor %}
@@ -32,8 +35,6 @@
     {% endfor %}
 </ul>
 </div>
-    </div>
-{% endblock %
     </div>
 {% endblock %}
 {% block ExtraJS %}

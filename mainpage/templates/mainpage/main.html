@@ -18,7 +18,7 @@
          <li>
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tbody><tr>
-                  <td><a href="http://www.sferatrans.ru/avtopark/kabluk/" class="zoom"><img src="{{ car.photo.url }}"></a></td>
+                  <td><a href="/cars/{{car.slug}}" class="zoom"><img src="{{ car.photo.url }}"></a></td>
                   <td><p class="head"><a href="/cars/{{car.slug}}">{{ car.title }}</a><br>
                       от {{ car.price }} руб.</p>
 
@@ -40,7 +40,9 @@
                   <td>{{ car.mkad }} руб./км</td>
                 </tr>
               </tbody></table>
-        <p><a href="#"><p>Рассчитать стоимость онлайн!</p></a></p>
+             <nav class="cl-effect-20" id="cl-effect-20">
+               <a href="/orders/"><span data-hover="Заказать">Заказать</span></a>
+             </nav>
             </li>
             {% endfor %}
        </ul>

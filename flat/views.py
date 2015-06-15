@@ -5,8 +5,8 @@ from news.models import News
 from texts.models import FlatTexts, FlatPhoto
 
 def flat(request):
-	photos=FlatPhoto.objects.all()
-	sub=FlatTexts.objects.all()
+    photos=FlatPhoto.objects.all()
+    sub=FlatTexts.objects.all()
     callbacks=Callback.objects.order_by('-date')[:3]
     news=News.objects.order_by('-data')[:3]
     questions=Question.objects.all()

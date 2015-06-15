@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/cars/admin.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cars/templates/cars/car_detail.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mainpage/views.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orders/templates/orders/order.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sitetransport/settings.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sitetransport/urls.py" charset="UTF-8" />
   </component>
