@@ -1,64 +1,54 @@
 {% extends 'mainpage/index.html' %}
+
 {% load staticfiles %}
+{% block CSS %}
+    <link href="{% static 'mainpage/script/slick/slick.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mainpage/script/slick/slick-theme.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block JS %}
+    <script type="text/javascript" src="{% static 'mainpage/script/slick/slick.min.js' %}"></script>
+{% endblock %}
 
 {% block maincol %}
-    <div class="box">
-<h1>Квартирный переезд недорого по Москве и области</h1>
-  <p>{{sub.sub1}}</p>
 
-<div class="slider_wrapper">
-<ul class="carousel">
+<div class="box">
+    {% for s in sub %}
+<h1>Квартирный переезд недорого по Москве и области</h1>
+  <p>{{s.sub1|safe}}</p>
+
+<div class="gruzslider">
   {% for img in photos %}
-  <li><img src="{{img.photo.url}}"/></li>
+  <div><img src="{{img.photo.url}}"/></div>
     {% endfor %}
-</ul>
 </div>
-    </div>
+
 <div class="h5">Цена на квартирный переезд</div>
 <p>* Обычно на проведение квартирного переезда выезжают 2 или 4 специалиста.</p>
-
 <table class="tariffs" cellpadding="8" cellspacing="2" border="0" width="100%">
 <tbody>
+{% for flat in flats %}
 <tr class="odd">
-<td width="255">Однокомнатная квартира<br>(Автомобиль и 2 грузчика)</td>
-<td class="light">от 3900 руб.<br>
-  до 20000 руб.<a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
-<td width="120"><a href="http://www.sferatrans.ru/pereezd-kvartiry/#calc" class="button small fancytext" data-flat-type="1" onclick="yaCounter25323134.reachGoal(&#39;flatraschet&#39;); return true;">Рассчитать</a></td>
+<td width="255" height="60px">{{ flat.name }}</td>
+<td class="light" style="width: 20%">от {{ flat.price }} руб.</br><a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
+<td style="width:60px">Рассчитать</td>
 </tr>
 <tr>
-<td>Двухкомнатная квартира<br>(Автомобиль и 2 грузчика)</td>
-<td class="light">от 6900 руб.<br>
-  до 30000 руб.<a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
-<td><a href="http://www.sferatrans.ru/pereezd-kvartiry/#calc" class="button small fancytext" data-flat-type="2" onclick="yaCounter25323134.reachGoal(&#39;flatraschet&#39;); return true;">Рассчитать</a></td>
-</tr>
-<tr class="odd">
-<td>Трехкомнатная квартира<br>(Автомобиль и 2 или 4 грузчика)</td>
-<td class="light">от 15000 руб.<br>до 35000 руб.<a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
-<td><a href="http://www.sferatrans.ru/pereezd-kvartiry/#calc" class="button small fancytext" data-flat-type="3" onclick="yaCounter25323134.reachGoal(&#39;flatraschet&#39;); return true;">Рассчитать</a></td>
-</tr>
-<tr>
-<td>Многокомнатная квартира<br>(Автомобиль и 4 грузчика)</td>
-<td class="light">от 25000 руб.<br>
-до 80000 руб.<a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
-<td><a href="http://www.sferatrans.ru/pereezd-kvartiry/#calc" class="button small fancytext" data-flat-type="4" onclick="yaCounter25323134.reachGoal(&#39;flatraschet&#39;); return true;">Рассчитать</a></td>
-</tr>
-<tr class="odd">
-<td>Пентхаус, таунхаус, коттедж <br>
-  (по результатам оценки)</td>
-<td class="light">Оценка бесплатно<a class="price_why fancytext" href="http://www.sferatrans.ru/pereezd-kvartiry/#why">?</a></td>
-<td><a href="http://www.sferatrans.ru/pereezd-kvartiry/#calc" class="button small fancytext" data-flat-type="5" onclick="yaCounter25323134.reachGoal(&#39;flatraschet&#39;); return true;">Рассчитать</a></td>
-</tr>
+{% endfor %}
 </tbody>
 </table>
-    <p>{{ sub.sub2}}</p>
-
+    <p>{{ s.sub2|safe}}</p>
+</div>
+{% endfor %}
 {% endblock %}
 {% block ExtraJS %}
 <script>
-$('.carousel').bxSlider({
-  auto: true,
-  autoControls: true
+$('.gruzslider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
 });
+
 </script>
 {% endblock %}
 

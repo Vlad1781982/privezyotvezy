@@ -7,6 +7,12 @@
   src:url(fonts/Rav3Axd7.otf)
 }
 
+@font-face {
+  font-family: GloberSemiBoldFree;
+  src:url(fonts/Ri286v8h.otf)
+}
+
+
 body {
     background: #f5f5f5 url(images/part3.jpg) 0 212px no-repeat;
     margin: 0;
@@ -1957,6 +1963,7 @@ text-decoration: none;
 
 #nav a {
     text-decoration: none;
+    font-family: GloberSemiBoldFree;
 }
 
 

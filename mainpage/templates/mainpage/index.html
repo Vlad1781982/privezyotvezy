@@ -23,6 +23,7 @@
 <!-- jquery.qtip plugin -->
 <script type="text/javascript" src="{% static 'mainpage/script/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jquery-ui-1.11.4.custom/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/jqFancyTransitions.1.8.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/lib/jquery.easytabs.js' %}"></script>
 <script type="text/javascript" src="{% static 'mainpage/script/jspkg-archive/vendor/jquery.hashchange.min.js' %}"></script>
  <script type="text/javascript" src="{% static 'mainpage/script/jquery.bxslider/jquery.bxslider.js' %}"></script>
@@ -62,10 +63,10 @@
         </ul>
         </div>
 
-    <ul class="slider">
-            <li><a href="/bus/"><img src="{% static 'mainpage/css/images/Slider1.jpg' %}"/></a></li>
-            <li><a href="/gruzoperevozki/"><img src="{% static 'mainpage/css/images/Slider2.jpg' %}"/></a></li>
-    </ul>
+    <div id="slideshowHolder">
+            <img src="{% static 'mainpage/css/images/Slider1.jpg' %}"/>
+            <img src="{% static 'mainpage/css/images/Slider2.jpg' %}"/>
+    </div>
   <div class="columns nc">
                 <h1 class="boxx mainpageboxx" style="font-family:'CuprumFFU' ">www.privezyotvezy.ru - недорогие грузоперевозки по Москве и области!</h1>
     <div class="main-column">
@@ -337,9 +338,8 @@
 $('.tabs').easytabs({uiTabs: true});
 </script>
 <script>
- $(document).ready(function(){
-  $('.slider').bxSlider({auto: true,slideMargin: 0,infiniteLoop: true,autoControls: true,
-        controls: false});
+ $(document).ready( function(){
+$("#slideshowHolder").jqFancyTransitions({ width: 940, height: 180 });
 });
 </script>
 

@@ -1,14 +1,19 @@
 {% extends 'mainpage/index.html' %}
 {% load staticfiles %}
-
+{% block CSS %}
+    <link href="{% static 'mainpage/script/slick/slick.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mainpage/script/slick/slick-theme.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block JS %}
+    <script type="text/javascript" src="{% static 'mainpage/script/slick/slick.min.js' %}"></script>
+{% endblock %}
 {% block maincol %}
     <div class="box">
 <h1>Грузоперевозки</h1>
-<p> {{sub.sub1}}
-<div class="h5" id="price_table">Автопарк «Сфератранс»</div>
+    {% for s in sub %}
+<p>{{s.sub1|safe}}</p>
 
-<p><a href="http://www.sferatrans.ru/avtopark/">Более 40 машин различных типов</a> – от маленьких скромных «каблучков» до 20-тонных еврофур. маршруты любой сложности и множество услуг на должном уровне качества. Мы умеем обходить заторы, простои, отвратительные дорожные условия и другие проблемы. Экономично и динамично!</p>
-
+<div class="h5" id="price_table">Наш автопарк</div>
 <table class="tariffs_cars" cellpadding="8" cellspacing="2" border="0" width="100%">
 <tbody>
 {% for car in cars %}
@@ -27,21 +32,25 @@
 </tbody>
 </table>
 
-<p>{{sub.sub2}}</p>
-<div class="slider_wrapper">
-<ul class="carousel">
-    {% for img in photos %}
-  <li><img src="{{img.photo.url}}"/></li>
+<p>{{s.sub2|safe}}</p>
     {% endfor %}
-</ul>
+<div class="slides">
+    {% for img in photos %}
+  <div><img src="{{img.photo.url}}"/></div>
+    {% endfor %}
 </div>
     </div>
 {% endblock %}
 {% block ExtraJS %}
 <script>
-$('.carousel').bxSlider({
-  auto: true,
-  autoControls: true
+ $('.slides').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
 });
 </script>
 {% endblock %}

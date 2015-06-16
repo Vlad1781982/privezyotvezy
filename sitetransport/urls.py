@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^cars/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'cars.views.car_detail'),
     url(r'^questions/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'questions.views.question'),
     url(r'^callbacks/(?P<slug>\w+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*))/$', 'callback.views.callback'),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 
 ]
 
