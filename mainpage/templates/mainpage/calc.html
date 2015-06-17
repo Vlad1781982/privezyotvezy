@@ -1,74 +1,77 @@
-{% block calc %}
+{% extends 'mainpage/index.html' %}
+{% block JS %}
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript" src="{% static 'mainpage/script/deliveryCalc.js' %}"></script>
+{% endblock %}
 
-<a href="http://www.sferatrans.ru/calc/" class="calc hasTip" onclick="yaCounter25323134.reachGoal(&#39;calccol&#39;); return true;">
-                        Калькулятор<br>
-                        стоимости услуг
 
-                    </a>
-      <div class="box">
-        <div class="tabs">
-          <ul class="tabs-head nc">
-                                <li><a href="#tips">Отзывы</a></li>
-                                <li><a href="#faq">Вопрос-ответ</a></li>
-          </ul>
-          <div id="faq" style="display: none;">
-<p><a href="http://www.sferatrans.ru/voprosy/minimalnaya-stoimost-10-tonnika-dlya-perevozki-po-moskve/">Какова минимальная стоимость заказа 10-тонника для перевозки по Москве?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/kakoj-gruz-yavlyaetsya-negabaritnym/">Какой груз является негабаритным?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/pereezd-pod-kljuch-otlichiya/">Чем «переезд под ключ» отличается от обычного переезда?</a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/prigorodnye-gruzoperevozki/">Занимаетесь ли вы пригородными грузоперевозками? </a></p>
-<p><a href="http://www.sferatrans.ru/voprosy/chto-takoe-ekspedirovanie/">Что такое экспедирование?</a></p>
-          </div>
-          <div id="tips" style="display: block;">
-<div class="review">
-                                    <p class="name">Олег Феоктистов, руководитель фирмы недвижимости, 12  декабря  2014</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="108">+9 </a><a href="javascript:;" data-oid="108" class="minus otzyv_down">-1 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/oleg-feoktistov-rukovoditel-firmy-nedvizhimosti/">Удивительно, но факт – с этой транспортной компанией не только можно...</a></p>
-                                </div>
-<div class="review">
-                                    <p class="name">Милена, Москва, 4  августа  2014</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="56">+10 </a><a href="javascript:;" data-oid="56" class="minus otzyv_down">-3 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/milena-moskva/">Если задумаетесь о переезде, то, не мешкая, обращайтесь...</a></p>
-                                </div>
-<div class="review">
-                                    <p class="name">Никита Мартьянов, дизайнер, 21  января  2015</p>
-                                    <p class="vote"><a href="javascript:;" class="plus otzyv_up" data-oid="118">+7 </a><a href="javascript:;" data-oid="118" class="minus otzyv_down">-2 </a></p>
-                                    <p><a href="http://www.sferatrans.ru/otzyvy/nikita-martyanov-dizajner/">Про меня немногочисленные друзья и родные говорят «человек...</a></p>
-                                </div>
-          </div>
-        </div>
-      </div>  
-        <div class="box">
-                        <div class="h3"><a href="http://www.sferatrans.ru/novosti/">Новости</a></div>
-<div class=" news">
-            <p class="date">01  июня  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-06-01/">Движение между Садовым кольцом и ТТК упорядочат</a></p>
-            <p>Центр организации дорожного движения Москвы намерен улучшить транспортную ситуацию в столице. Ради этого разрабатывается масштабный проект...&nbsp;</p>
-          </div>
-<div class=" news">
-            <p class="date">29  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-29/">«Росгосстрах» не может продавать полисы ОСАГО</a></p>
-            <p>Одна из важных новостей недели, которая коснулась всех водителей, включая тех, кто перевозит грузы, доставляет мебель и т.д., - запрет на...&nbsp;</p>
-          </div>
-<div class=" news">
-            <p class="date">28  мая  2015</p>
-            <p class="head"><a href="http://www.sferatrans.ru/novosti/2015-05-28/">«Выделенка» появится на Звенигородском шоссе</a></p>
-            <p>Водителям, включая сотрудников транспортной компании «СфераТранс», доставляющих грузы по Москве, стоит быть готовыми к тому, что...&nbsp;</p>
-          </div>
-        </div>
-        <div class="box">
-                        <div class="h3">Подписка на новости</div>
-	        <p align="right">
-            <label>Ваш e-mail:
-              <input type="text" name="email" class="subscribeform required" id="mail">
-            </label>
-            </p>
-<p id="subscribeform_err" align="right" style="display: none;"></p>
-            <p align="right" id="subscribeform_result">
-            <input name="" type="submit" class="button" id="subscribeform_go" value="Подписаться на рассылку!" onclick="yaCounter25323134.reachGoal(&#39;dist&#39;); return true;">
-            </p>
-                            <p>
-                            </p>
-        </div>
+{% block maincol %}
+    <div class="box">
+<div id="map"></div>
+<style>
+            #map {
+            width: 100%;
+            height: 500px;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 
- {% endblock %}
+<div id="calc" class="popup">
+        <div class="h3">ОНЛАЙН калькулятор расчета стоимости перевозки</div>
+
+        <form id="hover_calc_form" action="http://www.sferatrans.ru/calc/" method="post">
+
+            <div class="calc_form">
+                <p>
+
+                    <select name="auto_id" id="select_fill">
+                        <option value="0">Выбрать авто:</option> 
+
+{% for car in cars %}
+<option value="{{car.pricekm}}">{{car.title}}   {{car.carrying}}</option>
+{% endfor %}
+                    </select>
+                </p>
+
+                <p>
+                            <label class="strong" id="time"></label>
+                            <select name="time" id="time" style="width:410px;">
+                                <option value="4">4 часа - время мин. заказа авто</option>
+                                <option value="5">5 часа</option>
+                                <option value="6">6 часов</option>
+                                <option value="7">7 часов</option>
+                                <option value="8">8 часов</option>
+                                <option value="9">9 часов</option>
+                                <option value="10">10 часов</option>                          
+                            </select>
+                </p>
+
+                <p>
+                    <label class="strong">Нужны ли вам услуги грузчиков?</label>
+                </p>
+                <p id="grinputsbox">
+                    <label class="radio"><input type="radio" name="gr" value="0" checked="checked">Нет</label>
+                    <label class="radio"><input type="radio" name="gr" value="1">1 грузчик </label>
+                    <label class="radio"><input type="radio" name="gr" value="2">2 грузчика </label>
+                    <label class="radio"><input type="radio" name="gr" value="3">3 грузчика </label>
+                    <label class="radio"><input type="radio" name="gr" value="4">4 и более грузчиков </label>
+                </p>
+
+                <p style="display: none;" id="grtimepicker">
+                        <label class="strong"></label>
+                        <select name="grhidden" id="grhidden" style="width:410px;">
+                            <option value="4 часа">Время работы грузчика (4 часа мин. заказ)</option>
+                            <option value="5 часов">5 часов</option>
+                            <option value="6 часов">6 часов</option>
+                            <option value="7 часов">7 часов</option>
+                            <option value="8 часов">8 часов</option>
+                            <option value="9 часов">9 часов</option>
+                            <option value="10 и более часов">10 и более часов</option>       
+                        </select>
+                </p>
+
+    </div>
+{% endblock %}
+
 

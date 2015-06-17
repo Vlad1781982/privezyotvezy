@@ -13,6 +13,7 @@ class Cars(models.Model):
     title=models.CharField('Модель', max_length=200)
     description=models.TextField('Описание', max_length=2000,blank=True, null=True)
     price=models.IntegerField('Стоимость от...')
+    pricekm=models.IntegerField('руб/км', blank=True, null=True)
     carrying=models.IntegerField('Грузоподъемность')
     slug=models.SlugField(blank=True, null=True)
     minorder=models.CharField('Минимальный заказ', max_length=200)
@@ -57,8 +58,9 @@ class CarInline(admin.TabularInline):
 
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'admin_thumbnail','title', 'description','price', 'minorder', 'addtime', 'mkad', 'photo', 'visible')
+    list_display = ('__str__', 'admin_thumbnail','admin_thumbnail2','title', 'description','price', 'minorder', 'addtime', 'mkad', 'visible')
     admin_thumbnail = AdminThumbnail(image_field='photo')
+    admin_thumbnail2=AdminThumbnail(image_field='photochar')
     tabular=[CarInline]
 
 

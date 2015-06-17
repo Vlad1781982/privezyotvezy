@@ -2,37 +2,19 @@
 {% block maincol %}
      <div class="box">
 <h1>Офисный переезд Москва и область КАЧЕСТВЕННО</h1>
+            {% for s in sub %}
 
-              <p>{{sub.sub1}}</p>
+              <p>{{s.sub1|safe}}</p>
 
-			<div class="h5">Цены на переезд компании </div>
+			<div class="h5">Цены на переезд офиса</div>
 
 			<table class="tariffs" cellpadding="8" cellspacing="2" border="0" width="100%">
 			<tbody>
 			<tr class="odd">
-			<td width="210">От 1 до 5 рабочих мест</td>
-			<td class="light">от 4000 руб. до 14000 руб.</td>
-			<td><a href="http://www.sferatrans.ru/pereezd-ofisa/#office_moving" class="button small fancytext" data-office-type="1">Рассчитать</a></td>
-			</tr>
-			<tr>
-			<td>От 5 до 10 рабочих мест</td>
-			<td class="light">от 10000 руб. до 25000 руб.</td>
-			<td><a href="http://www.sferatrans.ru/pereezd-ofisa/#office_moving" class="button small fancytext" data-office-type="2">Рассчитать</a></td>
-			</tr>
-			<tr class="odd">
-			<td>От 10 до 15 рабочих мест</td>
-			<td class="light">от 15000 руб. до 35000 руб.</td>
-			<td><a href="http://www.sferatrans.ru/pereezd-ofisa/#office_moving" class="button small fancytext" data-office-type="3">Рассчитать</a></td>
-			</tr>
-			<tr>
-			<td>От 15 до 25 рабочих мест</td>
-			<td class="light">от 25000 руб. до 50000 руб.</td>
-			<td><a href="http://www.sferatrans.ru/pereezd-ofisa/#office_moving" class="button small fancytext" data-office-type="4">Рассчитать</a></td>
-			</tr>
-			<tr class="odd">
-			<td>От 25 до 35 рабочих мест</td>
-			<td class="light">от 50000 руб. до 65000 руб.</td>
-			<td><a href="http://www.sferatrans.ru/pereezd-ofisa/#office_moving" class="button small fancytext" data-office-type="5">Рассчитать</a></td>
+				{% for table in tables %}
+			<td width="210" height="60px">{{ table.name }}/td>
+			<td class="light" style="width: 20%">от {{ table.price }} руб</td>
+			<td style="width:60px">Рассчитать</td>
 			</tr>
 			</tbody>
 			</table>
@@ -45,7 +27,8 @@
 </div>
     </div>
 {% endblock %}
- <p>{{sub.sub2}}
+ <p>{{s.sub2|safe}}
+ 	{% endfor%}
     </div>
 {% block ExtraJS %}
 <script>

@@ -63,3 +63,12 @@ def formcallback(request):
     return render(request,'mainpage/form-callback.html', {'errors': errors,'form':form, 'questions':questions, 'callbacks':callbacks, 'news':news})
 
 
+
+
+def calc(request):
+    callbacks=Callback.objects.order_by('-date')[:3]
+    news=News.objects.order_by('-data')[:3]
+    questions=Question.objects.all()
+    return render(request, 'mainpage/calc.html', {'questions':questions, 'callbacks':callbacks, 'news':news})
+
+

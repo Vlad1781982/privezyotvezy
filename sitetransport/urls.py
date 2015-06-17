@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^form-callback/', 'mainpage.views.formcallback', name="formcallback.html"),
     url(r'^admin_tools/', include('admin_tools.urls')),
+    url(r'^questions/', 'questions.views.questions')
     url(r'^$', 'mainpage.views.index'),
     url(r'^test1/', 'mainpage.views.test1'),
     url(r'^test2/#tabs1-html', 'mainpage.views.test1html'),
@@ -36,6 +37,7 @@ urlpatterns = [
     url(r'^gruzoperevozki/', 'gruzoperevozki.views.gruzoperevozki'),
     url(r'^flat/', 'flat.views.flat'),
     url(r'^cottage/', 'cottage.views.cottage'),
+    url((r'^calc/', 'mainpage.views.calc'),)
     url(r'^office/', 'office.views.office'),
     url(r'^loaders/', 'loaders.views.loader'),
     url(r'^orders/', 'orders.views.orders'),

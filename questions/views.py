@@ -12,4 +12,9 @@ def question(request, slug):
     quest=Question.objects.get(slug=slug)
     return render(request, 'questions/question.html', {'questions':questions,'quest':quest, 'callbacks':callbacks,'news':news})
 
+def questions(request):
+	callbacks=Callback.objects.order_by('-date')[:3]
+    news=News.objects.order_by('-data')[:3]
+    questions=Question.objects.all()
+    return render(request, 'questions/questions.html', {'questions':questions, 'callbacks':callbacks,'news':news})
 
